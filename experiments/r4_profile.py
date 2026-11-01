@@ -6,6 +6,7 @@ import hashlib
 import json
 import pstats
 import shutil
+import sys
 from pathlib import Path
 
 from railstorm.optimizer_experiments import run_policy, specification
@@ -16,6 +17,9 @@ OUT = ROOT / "docs/r4_evidence"
 
 
 def resources():
+    if sys.platform != "win32":
+        raise OSError("Historical R4 resource profiling requires Windows")
+
     class Memory(ctypes.Structure):
         _fields_ = [("length", ctypes.c_ulong), ("load", ctypes.c_ulong)] + [
             (n, ctypes.c_ulonglong)

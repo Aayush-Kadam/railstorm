@@ -41,7 +41,8 @@ jobs:
         run: |
           mkdir -p release-evidence
           uv run --frozen mypy --explicit-package-bases railstorm tests experiments scripts > release-evidence/legacy-types.txt || test "$?" -eq 1
-          grep -q 'Found 41 errors in 10 files' release-evidence/legacy-types.txt
+          # Linux has resource.getrusage/RUSAGE_SELF; Windows reports two extra errors.
+          grep -q 'Found 39 errors in 10 files' release-evidence/legacy-types.txt
       - name: Fresh database migrations
         run: uv run --frozen alembic upgrade head
       - name: Full real-PostgreSQL regression and recovery tests

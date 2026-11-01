@@ -20,6 +20,8 @@ OUT = ROOT / "docs/r7_evidence"
 
 
 def cpu_ticks():
+    if sys.platform != "win32":
+        raise OSError("Historical R7 CPU profiling requires Windows")
     values = [wintypes.FILETIME() for _ in range(3)]
     assert ctypes.windll.kernel32.GetSystemTimes(*(ctypes.byref(v) for v in values))
     return [v.dwHighDateTime * 2**32 + v.dwLowDateTime for v in values]
