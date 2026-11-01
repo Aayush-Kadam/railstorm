@@ -22,7 +22,7 @@ uv run --frozen uvicorn railstorm.api:factory --factory --host 127.0.0.1 --port 
 ```
 
 On Bash use `export NAME=value` in place of PowerShell environment assignments. Open port8840.
-`pnpm --dir frontend dev` provides development mode with an API proxy to8840. The production build
+`pnpm --dir frontend dev` provides development mode with an API proxy to 8840. The production build
 is served by FastAPI. The pinned package policy allows the esbuild setup script.
 
 ## Financial demonstration

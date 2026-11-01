@@ -55,12 +55,17 @@ reload durable state, restore the participant, recover and retry. The beneficiar
 Lost acknowledgments and correspondent failures are also modeled. Recorded scenario playback is
 separately labeled in the interface.
 
-![Executed instant-payment destination outage with durable pending obligation](docs/screenshots/r5-container-pending.png)
-![Executed forward recovery and financial verification](docs/screenshots/r5-container-recovered.png)
+<details>
+<summary>Inspect executed pending finality and recovery states</summary>
 
-These screenshots were captured from genuine R5 container application states. They are historical
-visual evidence, not a claim that R7 or this release has passed a new browser/container campaign.
-The current release verification is recorded separately in [release verification](docs/RELEASE_VERIFICATION.md).
+![Executed instant-payment destination outage with durable pending obligation](docs/screenshots/release-container-pending.png)
+![Executed forward recovery and financial verification](docs/screenshots/release-container-recovered.png)
+
+</details>
+
+These screenshots were captured from genuine R7 container application states during fresh R8
+acceptance on an isolated GitHub Actions runner. [Capture provenance](docs/screenshots/PROVENANCE.json)
+records their source commit and hashes. See [release verification](docs/RELEASE_VERIFICATION.md).
 
 ## Start the local laboratory
 
@@ -111,7 +116,7 @@ for native installation, independent audit and development commands.
 | --- | --- | --- |
 | R5 | 261 tests; clean full-stack install; Docker CT-01–CT-10; browser and recreated-stack recovery | Historical R5 source |
 | R7 | 268 tests; 12 independent benchmark worlds; 36 concurrency configurations; real database restart across three rails | Historical R7 native/API source |
-| v0.9.0 publication candidate | See [fresh release verification](docs/RELEASE_VERIFICATION.md) | Exact selected release tree; results kept separate |
+| R8 / v0.9.0 candidate | 268 tests; clean install; native/browser workflows; Docker payment smoke and recreated-stack recovery PASS | Fresh isolated CI runner; [exact evidence](docs/RELEASE_VERIFICATION.md) |
 
 R7's controlled experiment reduced the matched native atomic-1,000 median from **28.649 to
 17.301 seconds (39.61% lower)** with identical financial states and canonical event history.
@@ -133,8 +138,8 @@ integration or universally optimal router. Same-world command execution is seria
 platform compatibility and full expanded flagship requirements remain partial. Historical
 regeneration tools require their campaign artifacts; they are not the quickstart.
 
-The maintained quality scope is explicit. The full historical Python inventory contains **41 type
-errors in ten legacy report-generation scripts**; see [known limitations](docs/KNOWN_LIMITATIONS.md).
+The maintained quality scope is explicit. The Windows historical Python inventory contains **41 type
+errors in ten legacy report-generation scripts** (Linux: 52 errors in 12 scripts); see [known limitations](docs/KNOWN_LIMITATIONS.md).
 No type-clean claim covers those scripts.
 
 Near-term roadmap: independent reviewer reproduction, broader supported-environment acceptance,

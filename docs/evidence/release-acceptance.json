@@ -1,0 +1,33 @@
+{
+  "selected_baseline": "R7 exact financial runtime, migrations, scenarios and frontend",
+  "tested_commit": "a22be7fa09d2d9af0d39ee28e70c3aa2e26bd25a",
+  "workflow_run": 41342297413,
+  "workflow_url": "https://github.com/Aayush-Kadam/railstorm/actions/runs/41342297413",
+  "artifact_id": 13098166322,
+  "artifact_sha256": "386b20c488db33dcd1471dae0011397ebd7a3e06aa3327f467d639b603c1f0cd",
+  "tests": 268,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "pytest_seconds": 94.456,
+  "docker": "PASS on isolated GitHub Actions Ubuntu24.04 runner",
+  "local_windows_r8_docker": "NOT RUN: insufficient safe memory headroom",
+  "browser_suites": [
+    "command-center",
+    "correspondent",
+    "instant",
+    "finality-instant",
+    "routing",
+    "correspondent-routing",
+    "optimizer",
+    "optimizer-v2",
+    "p2a",
+    "r3"
+  ],
+  "container_browser": "Live Crisis Lab r3 suite PASS",
+  "financial_smoke": "PASS: native and container, three rails, quotes, expiry, shortage, duplicate retry, independent audit and replay",
+  "container_restart": "PASS: app and database containers recreated, volumes retained, pending obligation recovered exactly once",
+  "target_10000_in_60": "UNVERIFIED",
+  "expanded_vision": "PARTIAL",
+  "license": "All rights reserved; no new license"
+}

@@ -1,5 +1,9 @@
 name: Research preview acceptance
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -26,8 +30,10 @@ jobs:
       COMPOSE_PARALLEL_LIMIT: "1"
       CI: "true"
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
         with:
           version: '0.12.5'
           python-version: '3.12'
@@ -35,6 +41,18 @@ jobs:
         run: uv sync --frozen
       - name: Dependency consistency
         run: uv pip check
+      - name: Isolated runner resource gate
+        run: |
+          mkdir -p release-evidence
+          uv run --frozen python - <<'PY'
+          import json, shutil
+          from pathlib import Path
+          info = {k: int(v.strip().split()[0]) * 1024 for k, v in (line.split(':', 1) for line in Path('/proc/meminfo').read_text().splitlines())}
+          sample = {'available_ram_bytes': info['MemAvailable'], 'disk_free_bytes': shutil.disk_usage('.').free}
+          Path('release-evidence/resources-before-tests.json').write_text(json.dumps(sample, indent=2))
+          print(sample)
+          assert sample['available_ram_bytes'] >= 2 * 1024**3 and sample['disk_free_bytes'] >= 3 * 1024**3
+          PY
       - name: Maintained lint, formatting and types
         run: uv run --frozen python scripts/check_quality.py
       - name: Disclosed historical type inventory
@@ -48,7 +66,7 @@ jobs:
         run: uv run --frozen alembic upgrade head
       - name: Full real-PostgreSQL regression and recovery tests
         run: uv run --frozen pytest -q --junitxml=release-evidence/pytest.xml
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '22'
       - name: Locked frontend install, TypeScript and production build
@@ -79,7 +97,17 @@ jobs:
             node "$suite"
           done
       - name: Clean R7 container image build
-        run: docker compose --progress plain build
+        run: |
+          uv run --frozen python - <<'PY'
+          import json, shutil
+          from pathlib import Path
+          info = {k: int(v.strip().split()[0]) * 1024 for k, v in (line.split(':', 1) for line in Path('/proc/meminfo').read_text().splitlines())}
+          sample = {'available_ram_bytes': info['MemAvailable'], 'disk_free_bytes': shutil.disk_usage('.').free}
+          Path('release-evidence/resources-before-docker.json').write_text(json.dumps(sample, indent=2))
+          print(sample)
+          assert sample['available_ram_bytes'] >= 2 * 1024**3 and sample['disk_free_bytes'] >= 3 * 1024**3
+          PY
+          docker compose --progress plain build
       - name: Container startup and database health
         run: docker compose up -d --no-build --wait --wait-timeout 120
       - name: Container all-rail financial smoke
@@ -106,7 +134,7 @@ jobs:
           git ls-files -z | xargs -0 sha256sum > release-evidence/source-sha256.txt
           uv pip freeze > release-evidence/python-environment.txt
           docker compose logs --no-color > release-evidence/container.log 2>&1 || true
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
           name: release-acceptance-${{ github.sha }}
@@ -114,6 +142,7 @@ jobs:
             release-evidence/
             docs/screenshots/
             docs/r3_evidence/
+            docs/*browser*.json
           retention-days: 14
       - name: Stop isolated CI stack
         if: always()

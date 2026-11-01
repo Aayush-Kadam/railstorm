@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "source_files_scanned": 234,
+  "source_files_scanned": 253,
   "secret_pattern_findings": [],
   "license_unchanged": true,
   "runtime_matches_R7": true,

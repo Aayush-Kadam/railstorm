@@ -1,0 +1,23 @@
+{
+  "release-container-pending.png": {
+    "sha256": "b480a94935e0cd60a003727847146b5d9648e93ed47815a0174eaee852b6b137",
+    "executed_commit": "a22be7fa09d2d9af0d39ee28e70c3aa2e26bd25a",
+    "workflow_run": 41342297413,
+    "source_capture": "r3-live-pending.png",
+    "scope": "container live crisis lab"
+  },
+  "release-container-recovered.png": {
+    "sha256": "388a1de801ba7c5ce08b2bdeb9894f627898ef646da25ab958ec756991d58262",
+    "executed_commit": "a22be7fa09d2d9af0d39ee28e70c3aa2e26bd25a",
+    "workflow_run": 41342297413,
+    "source_capture": "r3-live-recovered.png",
+    "scope": "container live crisis lab"
+  },
+  "release-command-center.png": {
+    "sha256": "b3b61366140e2cd5f0467a5079f1a3f61fa7e7ee504667fe49d3898a9e53764e",
+    "executed_commit": "a22be7fa09d2d9af0d39ee28e70c3aa2e26bd25a",
+    "workflow_run": 41342297413,
+    "source_capture": "command-center-desktop.png",
+    "scope": "native browser workflow"
+  }
+}
