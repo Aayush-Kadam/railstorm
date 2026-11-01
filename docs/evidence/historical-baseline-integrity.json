@@ -1,0 +1,14 @@
+[
+  {
+    "milestone": "R5",
+    "archive_sha256": "04e64071e916095b58fd7c77db8615b3f44395875406a927192e45beedcbc067",
+    "internal_files_verified": 286,
+    "crc": "PASS"
+  },
+  {
+    "milestone": "R7_PERF",
+    "archive_sha256": "0525ff4f68e064f52a60efb346da5b5e820f6709e4305aaa6c48fcff3af1445f",
+    "internal_files_verified": 797,
+    "crc": "PASS"
+  }
+]

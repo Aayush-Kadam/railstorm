@@ -9,6 +9,7 @@ __pycache__/
 .mypy_cache/
 node_modules/
 frontend/dist/
+release-evidence/
 .env*
 !.env.example
 *.zip

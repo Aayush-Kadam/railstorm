@@ -10,11 +10,6 @@
     "license": "MIT"
   },
   {
-    "name": "csstype",
-    "version": "3.2.3",
-    "license": "MIT"
-  },
-  {
     "name": "cytoscape",
     "version": "3.33.1",
     "license": "MIT"
@@ -45,34 +40,9 @@
     "license": "ISC"
   },
   {
-    "name": "picomatch",
-    "version": "4.0.7",
-    "license": "MIT"
-  },
-  {
     "name": "playwright-core",
     "version": "1.56.1",
     "license": "Apache-2.0"
-  },
-  {
-    "name": "playwright",
-    "version": "1.56.1",
-    "license": "Apache-2.0"
-  },
-  {
-    "name": "playwright-core",
-    "version": "1.56.1",
-    "license": "Apache-2.0"
-  },
-  {
-    "name": "nanoid",
-    "version": "3.3.20",
-    "license": "MIT"
-  },
-  {
-    "name": "picocolors",
-    "version": "1.1.1",
-    "license": "ISC"
   },
   {
     "name": "postcss",
@@ -100,33 +70,8 @@
     "license": "MIT"
   },
   {
-    "name": "react",
-    "version": "19.1.1",
-    "license": "MIT"
-  },
-  {
     "name": "rollup",
     "version": "4.65.1",
-    "license": "MIT"
-  },
-  {
-    "name": "scheduler",
-    "version": "0.26.0",
-    "license": "MIT"
-  },
-  {
-    "name": "source-map-js",
-    "version": "1.2.2",
-    "license": "BSD-3-Clause"
-  },
-  {
-    "name": "fdir",
-    "version": "6.5.0",
-    "license": "MIT"
-  },
-  {
-    "name": "picomatch",
-    "version": "4.0.7",
     "license": "MIT"
   },
   {
@@ -138,36 +83,6 @@
     "name": "typescript",
     "version": "5.9.2",
     "license": "Apache-2.0"
-  },
-  {
-    "name": "esbuild",
-    "version": "0.25.12",
-    "license": "MIT"
-  },
-  {
-    "name": "fdir",
-    "version": "6.5.0",
-    "license": "MIT"
-  },
-  {
-    "name": "picomatch",
-    "version": "4.0.7",
-    "license": "MIT"
-  },
-  {
-    "name": "postcss",
-    "version": "8.5.32",
-    "license": "MIT"
-  },
-  {
-    "name": "rollup",
-    "version": "4.65.1",
-    "license": "MIT"
-  },
-  {
-    "name": "tinyglobby",
-    "version": "0.2.17",
-    "license": "MIT"
   },
   {
     "name": "vite",
@@ -212,31 +127,6 @@
   {
     "name": "@types/react-dom",
     "version": "19.1.9",
-    "license": "MIT"
-  },
-  {
-    "name": "@types/react",
-    "version": "19.1.16",
-    "license": "MIT"
-  },
-  {
-    "name": "@esbuild/win32-x64",
-    "version": "0.25.12",
-    "license": "MIT"
-  },
-  {
-    "name": "@rollup/rollup-win32-x64-gnu",
-    "version": "4.65.1",
-    "license": "MIT"
-  },
-  {
-    "name": "@rollup/rollup-win32-x64-msvc",
-    "version": "4.65.1",
-    "license": "MIT"
-  },
-  {
-    "name": "@types/estree",
-    "version": "1.0.9",
     "license": "MIT"
   }
 ]
