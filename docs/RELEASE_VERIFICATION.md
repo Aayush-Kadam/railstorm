@@ -6,7 +6,7 @@ Internal engine identifier 0.1.1 remains for compatibility; v0.9.0 identifies th
 
 ## Fresh acceptance
 
-[Successful isolated runner](https://github.com/Aayush-Kadam/railstorm/actions/runs/41342297413)
+[Passing application and container checks](https://github.com/Aayush-Kadam/railstorm/actions/runs/41342297413)
 tested commit `a22be7fa09d2d9af0d39ee28e70c3aa2e26bd25a`. [Machine-readable summary](evidence/release-acceptance.json).
 
 | Check | Actual result |
@@ -42,6 +42,13 @@ fixed them without changing the financial engine. Run 2 exposed the actual Linux
 tests and frontend build but its Ubuntu 26.04 browser installer was unsupported by pinned
 Playwright 1.56.1. Pinning Ubuntu 24.04 resolved the environment mismatch. No failed result was
 relabeled as passing; no test or financial assertion was removed.
+
+Run 4 passed every application, financial, browser and Docker step and uploaded its evidence,
+then the job failed in optional uv cache pruning after a 300-second lock timeout. Its overall
+workflow is therefore **FAIL**, despite the separately passing acceptance steps above. The final
+workflow disables optional cache persistence and starts the installed uvicorn directly, avoiding
+a long-lived uv wrapper. Run 5 was canceled as superseded. The final release requires a completely
+successful workflow, including cleanup; these failed/canceled runs remain visible in Actions.
 
 ## Separate verdicts
 

@@ -37,6 +37,7 @@ jobs:
         with:
           version: '0.12.5'
           python-version: '3.12'
+          enable-cache: false
       - name: Clean locked Python installation
         run: uv sync --frozen
       - name: Dependency consistency
@@ -78,7 +79,7 @@ jobs:
       - name: Native API startup and scenario loading
         run: |
           uv run --frozen python scripts/load_scenarios.py
-          uv run --frozen uvicorn railstorm.api:factory --factory --host 127.0.0.1 --port 8840 > release-evidence/api.log 2>&1 &
+          .venv/bin/uvicorn railstorm.api:factory --factory --host 127.0.0.1 --port 8840 > release-evidence/api.log 2>&1 &
           for attempt in $(seq 1 30); do
             if curl --fail --silent http://127.0.0.1:8840/api/v1/health > release-evidence/native-health.json; then exit 0; fi
             sleep 1

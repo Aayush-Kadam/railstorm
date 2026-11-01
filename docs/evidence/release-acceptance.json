@@ -29,5 +29,8 @@
   "container_restart": "PASS: app and database containers recreated, volumes retained, pending obligation recovered exactly once",
   "target_10000_in_60": "UNVERIFIED",
   "expanded_vision": "PARTIAL",
-  "license": "All rights reserved; no new license"
+  "license": "All rights reserved; no new license",
+  "required_acceptance_steps": "PASS",
+  "overall_workflow": "FAIL: optional post-acceptance uv cache prune timed out after 300 seconds",
+  "final_release_requirement": "Complete successful workflow on final tagged commit"
 }
