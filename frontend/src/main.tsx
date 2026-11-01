@@ -1,0 +1,116 @@
+import {RoutingInspector} from './RoutingInspector';
+import {InstantInspector} from './InstantInspector';
+import {CrisisInspector} from './CrisisInspector';
+import React, {useEffect, useRef, useState} from 'react';
+import {createRoot} from 'react-dom/client';
+import cytoscape from 'cytoscape';
+import './style.css';
+
+type Obj = Record<string, any>;
+const fmt = (n: number) => (n/100).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+async function api(path: string, data?: unknown): Promise<any> {
+  const response = await fetch('/api/v1'+path, data===undefined ? {} : {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)});
+  const value = await response.json();
+  if(!response.ok) throw new Error(value.error?.code || JSON.stringify(value.detail || 'Request failed'));
+  return value;
+}
+
+function Network({network, selected, pulse, path, hops}: {network:Obj|null,selected:(id:string)=>void,pulse:Obj|null,path:string[],hops:Obj[]}) {
+  const element = useRef<HTMLDivElement>(null);
+  const cy = useRef<cytoscape.Core|null>(null);
+  useEffect(()=>{
+    if(!element.current || !network) return;
+    const positions:Obj = {ATLAS_US:[80,170], STERLING_UK:[300,90], RHINE_EU:[490,90], MERIDIAN_SG:[560,300], BHARAT_IN:[340,310]};
+    cy.current = cytoscape({container:element.current, layout:{name:'preset'}, elements:[
+      ...Object.entries(network.banks).map(([id,name])=>({data:{id,label:(name as string).replace(' · ','\n')}, position:{x:positions[id][0],y:positions[id][1]}})),
+      ...network.links.map((l:Obj,i:number)=>({data:{id:'link'+i, source:l.from,target:l.to,label:l.currency||l.rail,currency:l.currency,relationshipId:l.relationship_id}}))],
+      style:[{selector:'node', style:{'background-color':'#182f35','border-color':'#3b9a9a','border-width':2,width:38,height:38,label:'data(label)',color:'#d4e2e6','text-valign':'bottom','text-margin-y':12,'font-size':12,'text-wrap':'wrap'}},
+        {selector:'edge',style:{width:2,'line-color':'#35616b','target-arrow-color':'#5ca6ad','target-arrow-shape':'triangle','curve-style':'bezier'}},
+        {selector:':selected',style:{'background-color':'#9ae6dc','border-color':'#fff'}}], minZoom:0.5,maxZoom:2,wheelSensitivity:0.15});
+    cy.current.on('tap','node',e=>selected(e.target.id()));
+    cy.current.fit(undefined,50);
+    return ()=>{cy.current?.destroy();};
+  },[network?.banks ? JSON.stringify(network.banks):'', network?.links ? JSON.stringify(network.links):'']);
+  useEffect(()=>{
+    if(pulse && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      cy.current?.edges().filter(e=>e.data('source')===pulse.sender && e.data('target')===pulse.receiver && (!pulse.currency || e.data('currency')===pulse.currency)).animate({style:{'line-color':'#a0fff0'},duration:150}).animate({style:{'line-color':'#35616b'},duration:600});
+    }
+  },[pulse]);
+  useEffect(()=>{cy.current?.nodes().forEach(n=>{n.style('border-color',network?.faults?.some((f:Obj)=>f.active&&f.data.type==='PARTICIPANT_DOWN'&&f.data.target===n.id())?'#f27b72':'#3b9a9a');});cy.current?.edges().forEach(e=>{const h=hops.find((h:Obj)=>h.relationship_id===e.data('relationshipId'));e.style('line-color',h?.posting_status==='POSTED'?'#9ae6dc':h?'#d9a549':'#35616b');e.style('width',path.some((b,i)=>b===e.data('source')&&path[i+1]===e.data('target'))?5:2);});},[JSON.stringify(path),JSON.stringify(hops),JSON.stringify(network?.faults)]);
+  return <div ref={element} className="network" aria-label="Persisted bank network. Directed correspondent links or the atomic PvP corridor; selected chain route is emphasized." role="img"/>;
+}
+
+function App(){
+  const [scenarios,setScenarios]=useState<Obj[]>([]),[runs,setRuns]=useState<Obj[]>([]),[run,setRun]=useState(()=>localStorage.getItem('railstorm.run')||'');
+  const [view,setView]=useState('Network'),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+  const [detail,setDetail]=useState<Obj|null>(null),[network,setNetwork]=useState<Obj|null>(null),[metrics,setMetrics]=useState<Obj>({});
+  const [payments,setPayments]=useState<Obj[]>([]),[events,setEvents]=useState<Obj[]>([]),[inspection,setInspection]=useState<Obj|null>(null);
+  const [verification,setVerification]=useState<Obj|null>(null),[bank,setBank]=useState('ATLAS_US'),[pulse,setPulse]=useState<Obj|null>(null);
+  const [scenarioId,setScenarioId]=useState('golden_pvp'),[seed,setSeed]=useState(20261029),[count,setCount]=useState(1),[preset,setPreset]=useState('golden');
+  const [faultType,setFaultType]=useState('CRASH_AFTER_COMMIT'),[search,setSearch]=useState('p000000'),[offset,setOffset]=useState(0);
+  const [notice,setNotice]=useState('');
+  const act = async (fn:()=>Promise<void>)=>{setBusy(true);setError(''); try{await fn();}catch(e){setError(String((e as Error).message));}finally{setBusy(false);}};
+  async function refresh(id=run){
+    if(!id)return;
+    const [d,n,m,p,e]=await Promise.all([api(`/runs/${id}`),api(`/runs/${id}/network`),api(`/runs/${id}/metrics`),api(`/runs/${id}/payments?offset=${offset}`),api(`/runs/${id}/events?limit=100`)]);
+    setDetail(d);setNetwork(n);setMetrics(m);setPayments(p);setEvents(e);
+  }
+  useEffect(()=>{act(async()=>{setScenarios(await api('/scenarios'));setRuns(await api('/runs'));});},[]);
+  useEffect(()=>{setVerification(null);setInspection(null);act(()=>refresh());},[run,offset]);
+  useEffect(()=>{if(run)localStorage.setItem('railstorm.run',run);},[run]);
+  useEffect(()=>{if(!run)return; const timer=setInterval(()=>{refresh().catch(e=>setError(e.message));},2000);return()=>clearInterval(timer);},[run,offset]);
+  useEffect(()=>{
+    if(!run)return;
+    const ws=new WebSocket(`${location.protocol==='https:'?'wss':'ws'}://${location.host}/api/v1/runs/${run}/stream`);
+    ws.onmessage=e=>{const batch=JSON.parse(e.data); for(const x of batch.events){if(x.event_type==='CB_HOP_CHANGED'&&x.payload.posting_status==='POSTED'&&x.payload.delivery_status==='ACK_MISSING')setPulse({...x.payload,seq:x.seq});if(x.event_type==='JOURNAL_POSTED'&&x.payload.issuer==='SHARED'&&x.aggregate_id.startsWith('p')){const from=x.payload.lines.find((l:Obj)=>l.delta<0),to=x.payload.lines.find((l:Obj)=>l.delta>0);if(from&&to)setPulse({sender:from.account_id.split(':')[0],receiver:to.account_id.split(':')[0],seq:x.seq});}}};
+    return()=>ws.close();
+  },[run]);
+  async function create(){
+    const unique = scenarioId+'-'+Date.now().toString(36);
+    if(preset.startsWith('cb')){const scenario:Obj={scenario_id:unique,rail:'CORRESPONDENT',seed,payment_count:count,destination_currency:preset==='cb_fx'?'SGD':'USD'};if(preset==='cb_exposure'||preset==='cb_fx')scenario.faults=[{id:'downstream',type:'PARTICIPANT_DOWN',target:preset==='cb_fx'?'MERIDIAN_SG':'RHINE_EU',at_ms:151,duration_ms:5000}];await api('/correspondent/scenarios',scenario);setScenarios(await api('/scenarios'));const r=await api('/runs',{scenario_id:unique});setRuns(await api('/runs'));setRun(r.id);setView('Network');return;}
+    const scenario:Obj = {scenario_id:unique,seed,payment_count:count,principal_minor:preset==='golden'?500000000:10000,jitter_minor:preset==='golden'?0:1000,fee_minor:preset==='golden'?20000:20,interval_ms:10,settlement_delay_ms:50};
+    if(preset==='lost_ack')scenario.faults=[{id:'lost_ack',type:'CRASH_AFTER_COMMIT',at_ms:0,duration_ms:500}];
+    if(preset==='crisis')scenario.faults=[{id:'sgd_freeze',type:'LIQUIDITY_FREEZE',at_ms:0,duration_ms:500,amount_minor:1000000000}];
+    await api('/scenarios',scenario);setScenarios(await api('/scenarios'));
+    const r=await api('/runs',{scenario_id:unique});setRuns(await api('/runs'));setRun(r.id);setView('Network');setNotice('Created a persisted run. Use Step or Run to advance virtual time.');
+  }
+  async function inspect(id:string){setSearch(id);setInspection(await api(`/runs/${run}/payments/${id}`));setView('Payments');}
+  async function exportRun(){
+    const data=await api(`/runs/${run}/export`);const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
+    const a=document.createElement('a');a.href=url;a.download=run+'.json';a.click();URL.revokeObjectURL(url);
+  }
+  const status = detail?.status || 'NO RUN';
+  return <div className="app">
+    <aside><div className="brand"><span>R</span> RAILSTORM</div><div className="eyebrow">SETTLEMENT LABORATORY</div>
+      <nav aria-label="Main navigation">{['Network','Payments','Chaos','Routing','Audit','Scenarios','Instant link','Crisis lab'].map((v,i)=><button key={v} className={view===v?'active':''} onClick={()=>setView(v)}><span>0{i+1}</span>{v}</button>)}</nav>
+      <div className="sidebar-bottom"><b>PROVE THE MONEY.</b><p>Synthetic identities.<br/>Synthetic funds.<br/>Recorded financial truth.</p><div className="version">ENGINE 0.1.1 · P1A</div></div>
+    </aside>
+    <main><header><div><div className="eyebrow">COMMAND CENTER / {view.toUpperCase()}</div><h1>{view==='Network'?'Global settlement network':view==='Payments'?'Payment inspector':view==='Chaos'?'Chaos control room':view==='Routing'?'Routing laboratory':view==='Audit'?'Audit explorer':view==='Instant link'?'Instant settlement link':view==='Crisis lab'?'Adversarial crisis laboratory':'Scenario studio'}</h1></div><div className="simulation-tag">● SYNTHETIC SIMULATION</div></header>
+      {view!=='Instant link'&&view!=='Routing'&&view!=='Crisis lab'&&<><div className="toolbar"><label>Persisted run <select aria-label="Persisted run" value={run} onChange={e=>{setOffset(0);setRun(e.target.value);}}><option value="">Select a run</option>{runs.map(r=><option key={r.id}>{r.id}</option>)}</select></label><span className="status">{status}</span><span className="clock">VIRTUAL {detail?.logical_time_ms??0} ms</span><button disabled={!run||busy} onClick={()=>act(async()=>{await api(`/runs/${run}/step`,{count:1});await refresh();})}>Step</button><button className="primary" disabled={!run||busy} onClick={()=>act(async()=>{await api(`/runs/${run}/resume`,{});await refresh();})}>Run</button><button disabled={!run||busy} onClick={()=>act(async()=>{await api(`/runs/${run}/pause`,{});await refresh();})}>Pause</button></div></>}
+      {error&&<div className="error" role="alert">{error}</div>}{notice&&<div className="notice" role="status">{notice}</div>}
+      {view!=='Instant link'&&view!=='Routing'&&view!=='Crisis lab'&&<><section className="kpis" aria-label="Server-computed metrics">{[['Submitted',metrics.submitted],['Settled / SLA',metrics.before_deadline],['Pending',metrics.pending],['Missing ACK',metrics.missing_ack],['Fees · USD',metrics.fees_usd_minor!=null?fmt(metrics.fees_usd_minor):undefined],['p95 · virtual ms',metrics.p95_ms]].map(([label,value])=><div key={String(label)}><span>{label}</span><strong>{value??'N/A'}</strong></div>)}</section></>}
+      {!run && view!=='Scenarios' && view!=='Instant link' && view!=='Routing' && view!=='Crisis lab' ? <section className="empty"><div className="eyebrow">START WITH A REPRODUCIBLE WORLD</div><h2>The network is waiting.</h2><p>Create a seeded scenario to fund five fictional banks and inspect exact settlement postings.</p><button className="primary" onClick={()=>setView('Scenarios')}>Create a scenario →</button></section>:null}
+      {view==='Network' && run && <><div className="workspace"><section className="panel graph-panel"><div className="panel-head"><h2>{network?.implemented_rails.includes("CORRESPONDENT")?"Correspondent chain":"Shared-book PvP"}</h2><span className="subtle">{network?.implemented_rails.includes("CORRESPONDENT")?"Separate hop commits · explicit payables":"2 funded legs · 1 atomic commit"}</span></div><Network network={network} selected={setBank} pulse={pulse} path={inspection?.payment.path||[]} hops={inspection?.chain?.hops||[]}/><div className="graph-legend"><span>━━ Selected route · mint = posted</span><span>Amber = pending stage · red node = unavailable</span></div></section><section className="panel positions"><div className="panel-head"><h2>Settlement positions</h2></div><label>Bank<select value={bank} onChange={e=>setBank(e.target.value)} aria-label="Bank">{Object.entries(network?.banks||{}).map(([id,name])=><option key={id} value={id}>{String(name)}</option>)}</select></label>{network?.positions.filter((p:Obj)=>p.owner===bank && p.issuer==='SHARED' && p.kind==='CLAIM').map((p:Obj)=><div className="balance" key={p.id}><b>{p.currency}</b><strong>{fmt(p.posted)}</strong><span>Reserved {fmt(p.reserved)} · Buffer {fmt(p.buffer)}</span><span>Spendable {fmt(p.spendable)}</span></div>)}</section></div><Exposure metrics={metrics}/><PaymentTable payments={payments} inspect={id=>act(()=>inspect(id))}/></>}
+      {view==='Scenarios'&&<div className="workspace"><section className="panel form"><div className="eyebrow">IMMUTABLE CONFIGURATION · SEEDED DEMAND</div><h2>Create a scenario</h2><label>Preset<select aria-label="Preset" value={preset} onChange={e=>{setPreset(e.target.value);setCount(e.target.value==='golden'||e.target.value.startsWith('cb')?1:100);}}><option value="golden">Golden · USD 5M → SGD 6.65M</option><option value="healthy">Healthy · small payments</option><option value="lost_ack">Lost ACK · commit, then recover</option><option value="crisis">SGD inventory freeze</option><option value="cb_healthy">Correspondent · healthy three-hop</option><option value="cb_exposure">Correspondent · downstream exposure</option><option value="cb_fx">Correspondent · FX then exposure</option></select></label><label>Name<input value={scenarioId} onChange={e=>setScenarioId(e.target.value)}/></label><label>Seed<input type="number" value={seed} onChange={e=>setSeed(Number(e.target.value))}/></label><label>Payment count · maximum 10,000<input type="number" min="1" max="10000" value={count} onChange={e=>setCount(Number(e.target.value))}/></label><button className="primary" disabled={busy} onClick={()=>act(create)}>Validate & create run</button></section><section className="panel"><h2>Registered fixtures</h2>{scenarios.length?scenarios.map(s=><button className="fixture" key={s.id} onClick={()=>act(async()=>{const r=await api('/runs',{scenario_id:s.id});setRuns(await api('/runs'));setRun(r.id);setView('Network');})}>{s.id}<span>Seed {s.config.seed} · {s.config.payment_count} payments</span></button>):<p className="subtle">No registered scenarios. Create one or load the supplied fixtures.</p>}<p className="subtle">All fees, rates, caps and balances are illustrative. Atomic PvP and correspondent chains use separate funded worlds.</p></section></div>}
+      {view==='Payments'&&run&&<><section className="panel"><div className="search"><label>Payment identity<input value={search} onChange={e=>setSearch(e.target.value)}/></label><button onClick={()=>act(()=>inspect(search))}>Inspect payment</button></div></section>{inspection&&<section className="panel inspector"><div className="panel-head"><h2>{inspection.payment.id}</h2><b>{inspection.payment.economic_status} / {inspection.payment.ack_status}</b></div><p>{inspection.payment.quote ? `${fmt(inspection.payment.quote.principal_minor)} ${inspection.payment.quote.source} → ${fmt(inspection.payment.quote.output_minor)} ${inspection.payment.quote.target} · Fee ${fmt(inspection.payment.quote.fee_minor)} ${inspection.payment.quote.fee_currency}`:inspection.payment.reason}</p><ChainInspector inspection={inspection} run={run} time={detail?.logical_time_ms||0} act={act} reload={async()=>{await inspect(search);await refresh();}}/><h3>Journal effects · integer minor units</h3><table><thead><tr><th>Entry</th><th>Account</th><th>Currency</th><th>Claim change</th></tr></thead><tbody>{inspection.journal.map((j:Obj,i:number)=><tr key={i}><td>{j.id}</td><td>{j.account_id}</td><td>{j.currency}</td><td>{j.delta}</td></tr>)}</tbody></table><h3>Chronological protocol trace</h3>{inspection.events.map((e:Obj)=><div className="trace" key={e.seq}><span>#{e.seq} · {e.logical_time_ms} ms</span><b>{e.event_type}</b><span>{e.payload.economic_status||e.payload.status||e.payload.decision||''}</span></div>)}{inspection.payment.rail!=='CORRESPONDENT'&&inspection.payment.ack_status==='MISSING'&&<button onClick={()=>act(async()=>{await api(`/runs/${run}/payments/${search}/acknowledge`,{});await inspect(search);await refresh();})}>Restore acknowledgment</button>}</section>}<PaymentTable payments={payments} inspect={id=>act(()=>inspect(id))}/><div className="pagination"><button disabled={offset===0} onClick={()=>setOffset(Math.max(0,offset-50))}>Previous</button><span>Payments {offset+1}–{offset+payments.length}</span><button disabled={payments.length<50} onClick={()=>setOffset(offset+50)}>Next</button></div></>}
+      {view==='Chaos'&&run&&<div className="workspace"><section className="panel form"><div className="eyebrow">FIRST-CLASS VIRTUAL EVENTS</div><h2>Schedule a fault</h2><p>Pause before injecting. The fault starts at the next virtual millisecond and lasts 500 ms.</p><label>Fault<select value={faultType} onChange={e=>setFaultType(e.target.value)}>{['LIQUIDITY_FREEZE','PARTICIPANT_DOWN','FX_RATE_SHOCK','MESSAGE_DROP','DUPLICATE_DELIVERY','CRASH_AFTER_COMMIT'].map(f=><option key={f}>{f}</option>)}</select></label><button className="primary" disabled={busy} onClick={()=>act(async()=>{await api(`/runs/${run}/faults`,{id:'manual-'+Date.now().toString(36),type:faultType,at_ms:(detail?.logical_time_ms||0)+1,duration_ms:500,amount_minor:900000000});setNotice('Fault scheduled. Step or Run to observe its effects.');await refresh();})}>Schedule fault</button><p className="subtle">Target: Sterling · SGD. Freeze affects free funds only. Crash-after-commit models response loss; it does not kill the operating-system process.</p></section><section className="panel"><h2>Observed faults</h2>{network?.faults.length?network.faults.map((f:Obj)=><div className="trace" key={f.id}><b>{f.data.type}</b><span>{f.active?'ACTIVE':'RESTORED'}</span><span>{f.id}</span></div>):<p className="subtle">No fault has activated yet.</p>}</section></div>}
+      {view==='Instant link'&&<InstantInspector/>}
+      {view==='Crisis lab'&&<CrisisInspector/>}
+      {view==='Routing'&&<RoutingInspector/>}
+      {view==='Audit'&&run&&<><section className="panel"><div className="panel-head"><h2>Replay & reconciliation</h2><div><button disabled={busy} onClick={()=>act(async()=>setVerification(await api(`/runs/${run}/replay-check`,{})))}>Verify replay</button><button disabled={busy} onClick={()=>act(async()=>setVerification(await api(`/runs/${run}/reconcile`,{})))}>Reconcile</button><button disabled={busy} onClick={()=>act(exportRun)}>Export JSON</button></div></div>{verification?<pre className="verification">{JSON.stringify(verification,null,2)}</pre>:<p className="subtle">Verification runs against committed PostgreSQL history. No result is assumed.</p>}</section><section className="panel"><div className="panel-head"><h2>Event stream</h2><span>First 100 events · ordered by sequence</span></div><table><thead><tr><th>Seq</th><th>Virtual ms</th><th>Type</th><th>Aggregate</th></tr></thead><tbody>{events.map(e=><tr key={e.seq}><td>{e.seq}</td><td>{e.logical_time_ms}</td><td>{e.event_type}</td><td>{e.aggregate_id}</td></tr>)}</tbody></table></section></>}
+      <footer>RAILSTORM / Build the financial network. Break the financial network. Prove that the money survived.<span>Shared-ledger laboratory · No live payments</span></footer>
+    </main></div>;
+}
+
+function Exposure({metrics}:{metrics:Obj}){return metrics.exposure_by_currency?<section className="panel"><h2>Outstanding exposure</h2>{Object.entries(metrics.exposure_by_currency).length?Object.entries(metrics.exposure_by_currency).map(([c,e])=><p className="warning" key={c}>{c}: {(e as Obj).amount_minor} minor units · {(e as Obj).obligations} open payables</p>):<p>No open correspondent payables.</p>}</section>:null;}
+function ChainInspector({inspection,run,time,act,reload}:{inspection:Obj,run:string,time:number,act:(fn:()=>Promise<void>)=>void,reload:()=>Promise<void>}){
+ const c=inspection.chain;if(!c)return null;const p=c.payment;
+ return <div className="chain-inspector"><h3>Correspondent payment chain · independent hop commits</h3><p>{p.command.principal_minor} {p.command.source_currency} minor units · {p.command.sender_bank_id} → {p.command.receiver_bank_id} · intended {p.command.destination_currency}</p><p>{p.path.join(' → ')} · {p.reference}</p><p className={c.beneficiary_credited?'positive':'warning'}>Beneficiary credited: {String(c.beneficiary_credited)} · End-to-end completed: {String(c.end_to_end_completed)}</p><p>Reason: {p.reason}</p><table><thead><tr><th>Stage / relationship</th><th>Sender → receiver</th><th>Amount / fee</th><th>Instruction / posting / delivery</th><th>Virtual ms / journals</th></tr></thead><tbody>{c.hops.map((h:Obj)=><tr key={h.id}><td>{h.hop_index+1} · {h.relationship_id||'FX'}</td><td>{h.sender} → {h.receiver}</td><td>{h.input_minor} {h.currency||h.source_currency} → {h.output_minor} {h.target_currency||h.currency}<br/>Fee {h.fee_minor} · beneficiary pays</td><td>{h.instruction_status}<br/>{h.settlement_status}<br/>{h.delivery_status}</td><td>{h.posted_ms??'Pending'}<br/>{h.journal_ids.join(', ')}</td></tr>)}</tbody></table><h3>Outstanding payables and exposure</h3>{c.obligations.length?c.obligations.map((o:Obj)=><p className={o.status==='OPEN'?'warning':''} key={o.id}>{o.debtor} · {o.amount} {o.currency} minor · {o.status} · age {o.age_ms} ms · {o.account_id}</p>):<p>No payable has been created.</p>}<p>Pending exposure: {JSON.stringify(c.pending_exposure_minor)} · currencies kept separate</p><p>Recovery eligibility: {c.recovery.reason}</p>{c.recovery.forward_eligible&&<button onClick={()=>act(async()=>{await api(`/runs/${run}/chains/${p.id}/advance`,{at_ms:time+100});await reload();})}>Advance / recover next stage</button>}{c.recovery.first_hop_return_eligible&&<button onClick={()=>act(async()=>{await api(`/runs/${run}/chains/${p.id}/return`,{at_ms:time+100});await reload();})}>Return first-hop net funds · fees retained</button>}<p className="subtle">Committed postings remain in history. Restore a participant through the scheduled fault end, then advance the chain. Later-hop recall is unavailable.</p>{c.events_truncated&&<p>First 500 chain events shown. Continue via the events API after sequence {c.next_event_cursor}.</p>}</div>;
+}
+
+function PaymentTable({payments,inspect}:{payments:Obj[],inspect:(id:string)=>void}){return <section className="panel"><div className="panel-head"><h2>Payment activity</h2><span>Committed backend state</span></div><table><thead><tr><th>Identity</th><th>Rail</th><th>Economic outcome</th><th>Acknowledgment</th><th>Reason</th></tr></thead><tbody>{payments.map(p=><tr key={p.id}><td><button className="text-button" onClick={()=>inspect(p.id)}>{p.id} ↗</button></td><td>{p.data.rail}</td><td className={p.data.economic_status==='SETTLED'?'positive':'warning'}>{p.data.economic_status}</td><td>{p.data.ack_status}</td><td>{p.data.reason}</td></tr>)}</tbody></table>{!payments.length&&<p className="subtle">No payments submitted. Advance the virtual event queue to begin.</p>}</section>;}
+
+createRoot(document.getElementById('root')!).render(<App/>);
+
+
+

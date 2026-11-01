@@ -1,0 +1,1 @@
+{"scenario_id":"compound_crisis_v2","seed":20261029,"payment_count":100,"principal_minor":10000,"fee_minor":20,"faults":[{"id":"freeze","type":"LIQUIDITY_FREEZE","at_ms":100,"duration_ms":500,"amount_minor":1000000000},{"id":"outage","type":"PARTICIPANT_DOWN","at_ms":200,"duration_ms":400},{"id":"lost","type":"MESSAGE_DROP","at_ms":0,"duration_ms":1000}]}

@@ -1,0 +1,1 @@
+{"scenario_id":"participant_outage","seed":20261029,"payment_count":100,"principal_minor":10000,"fee_minor":20,"faults":[{"id":"outage","type":"PARTICIPANT_DOWN","at_ms":100,"duration_ms":500}]}

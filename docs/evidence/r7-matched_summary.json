@@ -1,0 +1,335 @@
+{
+  "100": {
+    "baseline": {
+      "times": [
+        1.1738037000177428,
+        1.2645108999859076
+      ],
+      "median_seconds": 1.2191573000018252,
+      "range_seconds": [
+        1.1738037000177428,
+        1.2645108999859076
+      ],
+      "throughput_at_median": 82.02387009440889,
+      "client_cpu_seconds": [
+        0.734375,
+        0.90625
+      ],
+      "driver_wait_seconds": [
+        0.6562862010905519,
+        0.7408252998138778
+      ],
+      "driver_wait_calls": [
+        3659,
+        3659
+      ],
+      "cursor_calls": [
+        2827,
+        2827
+      ],
+      "financial_commits": [
+        3,
+        3
+      ],
+      "commit_total_seconds": [
+        0.005484799999976531,
+        0.0074504000367596745
+      ],
+      "pool_peak": [
+        2,
+        2
+      ],
+      "peak_client_bytes": 74805248,
+      "native_audit_seconds": [
+        0.1911563000176102,
+        0.2529448000132106
+      ],
+      "replay_seconds": [
+        0.15523979999125004,
+        0.17041969997808337
+      ],
+      "independent_audit_seconds": [
+        0.09610929997870699,
+        0.08974070000112988
+      ]
+    },
+    "modified": {
+      "times": [
+        0.6198876000125892,
+        0.6226814999827184
+      ],
+      "median_seconds": 0.6212845499976538,
+      "range_seconds": [
+        0.6198876000125892,
+        0.6226814999827184
+      ],
+      "throughput_at_median": 160.95684336650191,
+      "client_cpu_seconds": [
+        0.484375,
+        0.421875
+      ],
+      "driver_wait_seconds": [
+        0.38163510081358254,
+        0.3794737989665009
+      ],
+      "driver_wait_calls": [
+        3781,
+        3781
+      ],
+      "cursor_calls": [
+        2827,
+        2827
+      ],
+      "financial_commits": [
+        3,
+        3
+      ],
+      "commit_total_seconds": [
+        0.008184599981177598,
+        0.007157799962442368
+      ],
+      "pool_peak": [
+        2,
+        2
+      ],
+      "peak_client_bytes": 74465280,
+      "native_audit_seconds": [
+        0.06721870001638308,
+        0.08317110000643879
+      ],
+      "replay_seconds": [
+        0.06390749997808598,
+        0.06781460001366213
+      ],
+      "independent_audit_seconds": [
+        0.05272999999579042,
+        0.05632740000146441
+      ]
+    },
+    "elapsed_reduction_percent": 49.03983677932916,
+    "speed_factor": 1.9623171057552118,
+    "ranges_nonoverlapping": true
+  },
+  "500": {
+    "baseline": {
+      "times": [
+        12.34728560000076,
+        12.42267199998605
+      ],
+      "median_seconds": 12.384978799993405,
+      "range_seconds": [
+        12.34728560000076,
+        12.42267199998605
+      ],
+      "throughput_at_median": 40.371486142573474,
+      "client_cpu_seconds": [
+        8.546875,
+        7.96875
+      ],
+      "driver_wait_seconds": [
+        7.965382603142643,
+        8.238893802656094
+      ],
+      "driver_wait_calls": [
+        18054,
+        18054
+      ],
+      "cursor_calls": [
+        14014,
+        14014
+      ],
+      "financial_commits": [
+        4,
+        4
+      ],
+      "commit_total_seconds": [
+        0.04487449998850934,
+        0.035480899998219684
+      ],
+      "pool_peak": [
+        2,
+        2
+      ],
+      "peak_client_bytes": 101330944,
+      "native_audit_seconds": [
+        0.9802133000048343,
+        0.9288966999738477
+      ],
+      "replay_seconds": [
+        0.8663778000045568,
+        0.8262382000102662
+      ],
+      "independent_audit_seconds": [
+        0.6750704000005499,
+        0.6595381000079215
+      ]
+    },
+    "modified": {
+      "times": [
+        6.504333399992902,
+        5.8338520000106655
+      ],
+      "median_seconds": 6.169092700001784,
+      "range_seconds": [
+        5.8338520000106655,
+        6.504333399992902
+      ],
+      "throughput_at_median": 81.04919545135955,
+      "client_cpu_seconds": [
+        4.8125,
+        4.421875
+      ],
+      "driver_wait_seconds": [
+        4.811962900101207,
+        4.330234400258632
+      ],
+      "driver_wait_calls": [
+        18953,
+        18953
+      ],
+      "cursor_calls": [
+        14014,
+        14014
+      ],
+      "financial_commits": [
+        4,
+        4
+      ],
+      "commit_total_seconds": [
+        0.03564469999400899,
+        0.0406819999916479
+      ],
+      "pool_peak": [
+        2,
+        2
+      ],
+      "peak_client_bytes": 100716544,
+      "native_audit_seconds": [
+        0.7637168999935966,
+        0.7367916000075638
+      ],
+      "replay_seconds": [
+        0.7340331999876071,
+        0.7006487000035122
+      ],
+      "independent_audit_seconds": [
+        0.6672687999962363,
+        0.6674744000192732
+      ]
+    },
+    "elapsed_reduction_percent": 50.18891190992536,
+    "speed_factor": 2.00758513484322,
+    "ranges_nonoverlapping": true
+  },
+  "1000": {
+    "baseline": {
+      "times": [
+        28.749554100009846,
+        28.548820199997863
+      ],
+      "median_seconds": 28.649187150003854,
+      "range_seconds": [
+        28.548820199997863,
+        28.749554100009846
+      ],
+      "throughput_at_median": 34.905004276879296,
+      "client_cpu_seconds": [
+        18.640625,
+        18.09375
+      ],
+      "driver_wait_seconds": [
+        18.979612800467294,
+        18.68067250031163
+      ],
+      "driver_wait_calls": [
+        36434,
+        36434
+      ],
+      "cursor_calls": [
+        28382,
+        28382
+      ],
+      "financial_commits": [
+        6,
+        6
+      ],
+      "commit_total_seconds": [
+        0.0809832000231836,
+        0.07215210000867955
+      ],
+      "pool_peak": [
+        2,
+        2
+      ],
+      "peak_client_bytes": 133902336,
+      "native_audit_seconds": [
+        1.8414692000078503,
+        1.8233755999826826
+      ],
+      "replay_seconds": [
+        1.6867561000108253,
+        1.6802788999921177
+      ],
+      "independent_audit_seconds": [
+        1.3585433999833185,
+        1.3642910000053234
+      ]
+    },
+    "modified": {
+      "times": [
+        16.57693740000832,
+        18.02567810000619
+      ],
+      "median_seconds": 17.301307750007254,
+      "range_seconds": [
+        16.57693740000832,
+        18.02567810000619
+      ],
+      "throughput_at_median": 57.799099030510035,
+      "client_cpu_seconds": [
+        11.921875,
+        12.609375
+      ],
+      "driver_wait_seconds": [
+        12.347366498608608,
+        13.480997700622538
+      ],
+      "driver_wait_calls": [
+        38687,
+        38687
+      ],
+      "cursor_calls": [
+        28382,
+        28382
+      ],
+      "financial_commits": [
+        6,
+        6
+      ],
+      "commit_total_seconds": [
+        0.057170100044459105,
+        0.1456352999957744
+      ],
+      "pool_peak": [
+        2,
+        2
+      ],
+      "peak_client_bytes": 133443584,
+      "native_audit_seconds": [
+        1.534146599995438,
+        1.5280294999829493
+      ],
+      "replay_seconds": [
+        1.3537976999941748,
+        1.4060501000203658
+      ],
+      "independent_audit_seconds": [
+        1.398290499986615,
+        1.3793269000016153
+      ]
+    },
+    "elapsed_reduction_percent": 39.60977789903918,
+    "speed_factor": 1.6558972052266883,
+    "ranges_nonoverlapping": true
+  }
+}

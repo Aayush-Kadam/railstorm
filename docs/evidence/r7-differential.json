@@ -1,0 +1,2810 @@
+[
+  {
+    "run_id": "r7-8e1cfc97f1b840dc9ae016f2c722c8c6",
+    "count": 100,
+    "implementation": "baseline",
+    "reference_principal_total": 1006812,
+    "reference_target_total": 1339016,
+    "reference_fees_usd": 2000,
+    "expected_posted": {
+      "ATLAS_US:USD": 998991188,
+      "ATLAS_US:EUR": 0,
+      "ATLAS_US:SGD": 0,
+      "ATLAS_US:INR": 0,
+      "STERLING_UK:USD": 201006812,
+      "STERLING_UK:EUR": 0,
+      "STERLING_UK:SGD": 998660984,
+      "STERLING_UK:INR": 0,
+      "RHINE_EU:USD": 0,
+      "RHINE_EU:EUR": 0,
+      "RHINE_EU:SGD": 0,
+      "RHINE_EU:INR": 0,
+      "MERIDIAN_SG:USD": 0,
+      "MERIDIAN_SG:EUR": 0,
+      "MERIDIAN_SG:SGD": 101339016,
+      "MERIDIAN_SG:INR": 0,
+      "BHARAT_IN:USD": 0,
+      "BHARAT_IN:EUR": 0,
+      "BHARAT_IN:SGD": 0,
+      "BHARAT_IN:INR": 0,
+      "OPENING:USD": -1200000000,
+      "OPENING:EUR": 0,
+      "OPENING:SGD": -1100000000,
+      "OPENING:INR": 0,
+      "OPERATOR:USD": 2000,
+      "OPERATOR:EUR": 0,
+      "OPERATOR:SGD": 0,
+      "OPERATOR:INR": 0
+    },
+    "observed_positions": [
+      {
+        "account_id": "ATLAS_US:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:USD",
+        "posted": 998991188,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:SGD",
+        "posted": 101339016,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:SGD",
+        "posted": -1100000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:USD",
+        "posted": -1200000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:USD",
+        "posted": 2000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:SGD",
+        "posted": 998660984,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:USD",
+        "posted": 201006812,
+        "reserved": 0,
+        "buffer": 0
+      }
+    ],
+    "exact_posting_lines_verified": 500,
+    "independent": {
+      "run_id": "r7-8e1cfc97f1b840dc9ae016f2c722c8c6",
+      "pass": true,
+      "findings": [],
+      "accounts": 28,
+      "payments": 100,
+      "journal_groups": 204,
+      "journal_lines": 508,
+      "reservations": 200,
+      "correspondent_obligations": 0,
+      "instant_messages": 0,
+      "events": 1434,
+      "event_hash": "8f17b553a1a322bb458927e6e3b91fe45c20789911045c420e405f3d015e2b72",
+      "financial_state_hash": "d828f1df1675c717a46bf60fc68edd4bd561e233c25ce6a5c8ba0546c1430a64"
+    },
+    "replay": {
+      "match": true,
+      "events": 1434,
+      "event_hash": "8f17b553a1a322bb458927e6e3b91fe45c20789911045c420e405f3d015e2b72",
+      "replay_hash": "e6085e34319d98f34ce2880ebe5480e68523deffadc3d4d8ae644a0f4c57ae58",
+      "state_hash": "e6085e34319d98f34ce2880ebe5480e68523deffadc3d4d8ae644a0f4c57ae58",
+      "earliest_corrupt_event": null,
+      "projection_difference": null
+    },
+    "pass": true
+  },
+  {
+    "run_id": "r7-2249d52e3f2d4858856ce025ed3bb3d9",
+    "count": 100,
+    "implementation": "modified",
+    "reference_principal_total": 1006812,
+    "reference_target_total": 1339016,
+    "reference_fees_usd": 2000,
+    "expected_posted": {
+      "ATLAS_US:USD": 998991188,
+      "ATLAS_US:EUR": 0,
+      "ATLAS_US:SGD": 0,
+      "ATLAS_US:INR": 0,
+      "STERLING_UK:USD": 201006812,
+      "STERLING_UK:EUR": 0,
+      "STERLING_UK:SGD": 998660984,
+      "STERLING_UK:INR": 0,
+      "RHINE_EU:USD": 0,
+      "RHINE_EU:EUR": 0,
+      "RHINE_EU:SGD": 0,
+      "RHINE_EU:INR": 0,
+      "MERIDIAN_SG:USD": 0,
+      "MERIDIAN_SG:EUR": 0,
+      "MERIDIAN_SG:SGD": 101339016,
+      "MERIDIAN_SG:INR": 0,
+      "BHARAT_IN:USD": 0,
+      "BHARAT_IN:EUR": 0,
+      "BHARAT_IN:SGD": 0,
+      "BHARAT_IN:INR": 0,
+      "OPENING:USD": -1200000000,
+      "OPENING:EUR": 0,
+      "OPENING:SGD": -1100000000,
+      "OPENING:INR": 0,
+      "OPERATOR:USD": 2000,
+      "OPERATOR:EUR": 0,
+      "OPERATOR:SGD": 0,
+      "OPERATOR:INR": 0
+    },
+    "observed_positions": [
+      {
+        "account_id": "ATLAS_US:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:USD",
+        "posted": 998991188,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:SGD",
+        "posted": 101339016,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:SGD",
+        "posted": -1100000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:USD",
+        "posted": -1200000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:USD",
+        "posted": 2000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:SGD",
+        "posted": 998660984,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:USD",
+        "posted": 201006812,
+        "reserved": 0,
+        "buffer": 0
+      }
+    ],
+    "exact_posting_lines_verified": 500,
+    "independent": {
+      "run_id": "r7-2249d52e3f2d4858856ce025ed3bb3d9",
+      "pass": true,
+      "findings": [],
+      "accounts": 28,
+      "payments": 100,
+      "journal_groups": 204,
+      "journal_lines": 508,
+      "reservations": 200,
+      "correspondent_obligations": 0,
+      "instant_messages": 0,
+      "events": 1434,
+      "event_hash": "8f17b553a1a322bb458927e6e3b91fe45c20789911045c420e405f3d015e2b72",
+      "financial_state_hash": "d828f1df1675c717a46bf60fc68edd4bd561e233c25ce6a5c8ba0546c1430a64"
+    },
+    "replay": {
+      "match": true,
+      "events": 1434,
+      "event_hash": "8f17b553a1a322bb458927e6e3b91fe45c20789911045c420e405f3d015e2b72",
+      "replay_hash": "e6085e34319d98f34ce2880ebe5480e68523deffadc3d4d8ae644a0f4c57ae58",
+      "state_hash": "e6085e34319d98f34ce2880ebe5480e68523deffadc3d4d8ae644a0f4c57ae58",
+      "earliest_corrupt_event": null,
+      "projection_difference": null
+    },
+    "pass": true
+  },
+  {
+    "run_id": "r7-e52842049a604dd2bccf8c3c343e7a63",
+    "count": 100,
+    "implementation": "modified",
+    "reference_principal_total": 1006812,
+    "reference_target_total": 1339016,
+    "reference_fees_usd": 2000,
+    "expected_posted": {
+      "ATLAS_US:USD": 998991188,
+      "ATLAS_US:EUR": 0,
+      "ATLAS_US:SGD": 0,
+      "ATLAS_US:INR": 0,
+      "STERLING_UK:USD": 201006812,
+      "STERLING_UK:EUR": 0,
+      "STERLING_UK:SGD": 998660984,
+      "STERLING_UK:INR": 0,
+      "RHINE_EU:USD": 0,
+      "RHINE_EU:EUR": 0,
+      "RHINE_EU:SGD": 0,
+      "RHINE_EU:INR": 0,
+      "MERIDIAN_SG:USD": 0,
+      "MERIDIAN_SG:EUR": 0,
+      "MERIDIAN_SG:SGD": 101339016,
+      "MERIDIAN_SG:INR": 0,
+      "BHARAT_IN:USD": 0,
+      "BHARAT_IN:EUR": 0,
+      "BHARAT_IN:SGD": 0,
+      "BHARAT_IN:INR": 0,
+      "OPENING:USD": -1200000000,
+      "OPENING:EUR": 0,
+      "OPENING:SGD": -1100000000,
+      "OPENING:INR": 0,
+      "OPERATOR:USD": 2000,
+      "OPERATOR:EUR": 0,
+      "OPERATOR:SGD": 0,
+      "OPERATOR:INR": 0
+    },
+    "observed_positions": [
+      {
+        "account_id": "ATLAS_US:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:USD",
+        "posted": 998991188,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:SGD",
+        "posted": 101339016,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:SGD",
+        "posted": -1100000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:USD",
+        "posted": -1200000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:USD",
+        "posted": 2000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:SGD",
+        "posted": 998660984,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:USD",
+        "posted": 201006812,
+        "reserved": 0,
+        "buffer": 0
+      }
+    ],
+    "exact_posting_lines_verified": 500,
+    "independent": {
+      "run_id": "r7-e52842049a604dd2bccf8c3c343e7a63",
+      "pass": true,
+      "findings": [],
+      "accounts": 28,
+      "payments": 100,
+      "journal_groups": 204,
+      "journal_lines": 508,
+      "reservations": 200,
+      "correspondent_obligations": 0,
+      "instant_messages": 0,
+      "events": 1434,
+      "event_hash": "8f17b553a1a322bb458927e6e3b91fe45c20789911045c420e405f3d015e2b72",
+      "financial_state_hash": "d828f1df1675c717a46bf60fc68edd4bd561e233c25ce6a5c8ba0546c1430a64"
+    },
+    "replay": {
+      "match": true,
+      "events": 1434,
+      "event_hash": "8f17b553a1a322bb458927e6e3b91fe45c20789911045c420e405f3d015e2b72",
+      "replay_hash": "e6085e34319d98f34ce2880ebe5480e68523deffadc3d4d8ae644a0f4c57ae58",
+      "state_hash": "e6085e34319d98f34ce2880ebe5480e68523deffadc3d4d8ae644a0f4c57ae58",
+      "earliest_corrupt_event": null,
+      "projection_difference": null
+    },
+    "pass": true
+  },
+  {
+    "run_id": "r7-d456d89108db4ef2a6ab826fe5ad6d46",
+    "count": 100,
+    "implementation": "baseline",
+    "reference_principal_total": 1006812,
+    "reference_target_total": 1339016,
+    "reference_fees_usd": 2000,
+    "expected_posted": {
+      "ATLAS_US:USD": 998991188,
+      "ATLAS_US:EUR": 0,
+      "ATLAS_US:SGD": 0,
+      "ATLAS_US:INR": 0,
+      "STERLING_UK:USD": 201006812,
+      "STERLING_UK:EUR": 0,
+      "STERLING_UK:SGD": 998660984,
+      "STERLING_UK:INR": 0,
+      "RHINE_EU:USD": 0,
+      "RHINE_EU:EUR": 0,
+      "RHINE_EU:SGD": 0,
+      "RHINE_EU:INR": 0,
+      "MERIDIAN_SG:USD": 0,
+      "MERIDIAN_SG:EUR": 0,
+      "MERIDIAN_SG:SGD": 101339016,
+      "MERIDIAN_SG:INR": 0,
+      "BHARAT_IN:USD": 0,
+      "BHARAT_IN:EUR": 0,
+      "BHARAT_IN:SGD": 0,
+      "BHARAT_IN:INR": 0,
+      "OPENING:USD": -1200000000,
+      "OPENING:EUR": 0,
+      "OPENING:SGD": -1100000000,
+      "OPENING:INR": 0,
+      "OPERATOR:USD": 2000,
+      "OPERATOR:EUR": 0,
+      "OPERATOR:SGD": 0,
+      "OPERATOR:INR": 0
+    },
+    "observed_positions": [
+      {
+        "account_id": "ATLAS_US:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:USD",
+        "posted": 998991188,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:SGD",
+        "posted": 101339016,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:SGD",
+        "posted": -1100000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:USD",
+        "posted": -1200000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:USD",
+        "posted": 2000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:SGD",
+        "posted": 998660984,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:USD",
+        "posted": 201006812,
+        "reserved": 0,
+        "buffer": 0
+      }
+    ],
+    "exact_posting_lines_verified": 500,
+    "independent": {
+      "run_id": "r7-d456d89108db4ef2a6ab826fe5ad6d46",
+      "pass": true,
+      "findings": [],
+      "accounts": 28,
+      "payments": 100,
+      "journal_groups": 204,
+      "journal_lines": 508,
+      "reservations": 200,
+      "correspondent_obligations": 0,
+      "instant_messages": 0,
+      "events": 1434,
+      "event_hash": "8f17b553a1a322bb458927e6e3b91fe45c20789911045c420e405f3d015e2b72",
+      "financial_state_hash": "fbb2ec6c56eb6dd396409e47704c7ca81c1131b5b7b80021f9cb4b329ad309be"
+    },
+    "replay": {
+      "match": true,
+      "events": 1434,
+      "event_hash": "8f17b553a1a322bb458927e6e3b91fe45c20789911045c420e405f3d015e2b72",
+      "replay_hash": "e6085e34319d98f34ce2880ebe5480e68523deffadc3d4d8ae644a0f4c57ae58",
+      "state_hash": "e6085e34319d98f34ce2880ebe5480e68523deffadc3d4d8ae644a0f4c57ae58",
+      "earliest_corrupt_event": null,
+      "projection_difference": null
+    },
+    "pass": true
+  },
+  {
+    "run_id": "r7-6ab4d76cd90843be9193d225b01d62d9",
+    "count": 500,
+    "implementation": "baseline",
+    "reference_principal_total": 5014889,
+    "reference_target_total": 6669555,
+    "reference_fees_usd": 10000,
+    "expected_posted": {
+      "ATLAS_US:USD": 994975111,
+      "ATLAS_US:EUR": 0,
+      "ATLAS_US:SGD": 0,
+      "ATLAS_US:INR": 0,
+      "STERLING_UK:USD": 205014889,
+      "STERLING_UK:EUR": 0,
+      "STERLING_UK:SGD": 993330445,
+      "STERLING_UK:INR": 0,
+      "RHINE_EU:USD": 0,
+      "RHINE_EU:EUR": 0,
+      "RHINE_EU:SGD": 0,
+      "RHINE_EU:INR": 0,
+      "MERIDIAN_SG:USD": 0,
+      "MERIDIAN_SG:EUR": 0,
+      "MERIDIAN_SG:SGD": 106669555,
+      "MERIDIAN_SG:INR": 0,
+      "BHARAT_IN:USD": 0,
+      "BHARAT_IN:EUR": 0,
+      "BHARAT_IN:SGD": 0,
+      "BHARAT_IN:INR": 0,
+      "OPENING:USD": -1200000000,
+      "OPENING:EUR": 0,
+      "OPENING:SGD": -1100000000,
+      "OPENING:INR": 0,
+      "OPERATOR:USD": 10000,
+      "OPERATOR:EUR": 0,
+      "OPERATOR:SGD": 0,
+      "OPERATOR:INR": 0
+    },
+    "observed_positions": [
+      {
+        "account_id": "ATLAS_US:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:USD",
+        "posted": 994975111,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:SGD",
+        "posted": 106669555,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:SGD",
+        "posted": -1100000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:USD",
+        "posted": -1200000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:USD",
+        "posted": 10000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:SGD",
+        "posted": 993330445,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:USD",
+        "posted": 205014889,
+        "reserved": 0,
+        "buffer": 0
+      }
+    ],
+    "exact_posting_lines_verified": 2500,
+    "independent": {
+      "run_id": "r7-6ab4d76cd90843be9193d225b01d62d9",
+      "pass": true,
+      "findings": [],
+      "accounts": 28,
+      "payments": 500,
+      "journal_groups": 1004,
+      "journal_lines": 2508,
+      "reservations": 1000,
+      "correspondent_obligations": 0,
+      "instant_messages": 0,
+      "events": 7034,
+      "event_hash": "28716b586bb4ae33550ee37d533d37cf0ad52a5fc6115aeed22121049d1f4f09",
+      "financial_state_hash": "e51874648763cc362be30e3dc9faa4ec3274d11c43e9f2618d573f6e16b4acd0"
+    },
+    "replay": {
+      "match": true,
+      "events": 7034,
+      "event_hash": "28716b586bb4ae33550ee37d533d37cf0ad52a5fc6115aeed22121049d1f4f09",
+      "replay_hash": "c1d2590dd2a3d99d708a73edd49a45f70abf107f3f38fcd4b37ea28fa304ef5c",
+      "state_hash": "c1d2590dd2a3d99d708a73edd49a45f70abf107f3f38fcd4b37ea28fa304ef5c",
+      "earliest_corrupt_event": null,
+      "projection_difference": null
+    },
+    "pass": true
+  },
+  {
+    "run_id": "r7-e629ad7b643b4ff99645dc6dcc7148ed",
+    "count": 500,
+    "implementation": "modified",
+    "reference_principal_total": 5014889,
+    "reference_target_total": 6669555,
+    "reference_fees_usd": 10000,
+    "expected_posted": {
+      "ATLAS_US:USD": 994975111,
+      "ATLAS_US:EUR": 0,
+      "ATLAS_US:SGD": 0,
+      "ATLAS_US:INR": 0,
+      "STERLING_UK:USD": 205014889,
+      "STERLING_UK:EUR": 0,
+      "STERLING_UK:SGD": 993330445,
+      "STERLING_UK:INR": 0,
+      "RHINE_EU:USD": 0,
+      "RHINE_EU:EUR": 0,
+      "RHINE_EU:SGD": 0,
+      "RHINE_EU:INR": 0,
+      "MERIDIAN_SG:USD": 0,
+      "MERIDIAN_SG:EUR": 0,
+      "MERIDIAN_SG:SGD": 106669555,
+      "MERIDIAN_SG:INR": 0,
+      "BHARAT_IN:USD": 0,
+      "BHARAT_IN:EUR": 0,
+      "BHARAT_IN:SGD": 0,
+      "BHARAT_IN:INR": 0,
+      "OPENING:USD": -1200000000,
+      "OPENING:EUR": 0,
+      "OPENING:SGD": -1100000000,
+      "OPENING:INR": 0,
+      "OPERATOR:USD": 10000,
+      "OPERATOR:EUR": 0,
+      "OPERATOR:SGD": 0,
+      "OPERATOR:INR": 0
+    },
+    "observed_positions": [
+      {
+        "account_id": "ATLAS_US:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:USD",
+        "posted": 994975111,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:SGD",
+        "posted": 106669555,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:SGD",
+        "posted": -1100000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:USD",
+        "posted": -1200000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:USD",
+        "posted": 10000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:SGD",
+        "posted": 993330445,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:USD",
+        "posted": 205014889,
+        "reserved": 0,
+        "buffer": 0
+      }
+    ],
+    "exact_posting_lines_verified": 2500,
+    "independent": {
+      "run_id": "r7-e629ad7b643b4ff99645dc6dcc7148ed",
+      "pass": true,
+      "findings": [],
+      "accounts": 28,
+      "payments": 500,
+      "journal_groups": 1004,
+      "journal_lines": 2508,
+      "reservations": 1000,
+      "correspondent_obligations": 0,
+      "instant_messages": 0,
+      "events": 7034,
+      "event_hash": "28716b586bb4ae33550ee37d533d37cf0ad52a5fc6115aeed22121049d1f4f09",
+      "financial_state_hash": "9598d113d383aa31b3ae4abea5c39368316add95afb0347acf967f266151a68f"
+    },
+    "replay": {
+      "match": true,
+      "events": 7034,
+      "event_hash": "28716b586bb4ae33550ee37d533d37cf0ad52a5fc6115aeed22121049d1f4f09",
+      "replay_hash": "c1d2590dd2a3d99d708a73edd49a45f70abf107f3f38fcd4b37ea28fa304ef5c",
+      "state_hash": "c1d2590dd2a3d99d708a73edd49a45f70abf107f3f38fcd4b37ea28fa304ef5c",
+      "earliest_corrupt_event": null,
+      "projection_difference": null
+    },
+    "pass": true
+  },
+  {
+    "run_id": "r7-cdfb23b76b234cb1b9a70382d42e45a0",
+    "count": 500,
+    "implementation": "modified",
+    "reference_principal_total": 5014889,
+    "reference_target_total": 6669555,
+    "reference_fees_usd": 10000,
+    "expected_posted": {
+      "ATLAS_US:USD": 994975111,
+      "ATLAS_US:EUR": 0,
+      "ATLAS_US:SGD": 0,
+      "ATLAS_US:INR": 0,
+      "STERLING_UK:USD": 205014889,
+      "STERLING_UK:EUR": 0,
+      "STERLING_UK:SGD": 993330445,
+      "STERLING_UK:INR": 0,
+      "RHINE_EU:USD": 0,
+      "RHINE_EU:EUR": 0,
+      "RHINE_EU:SGD": 0,
+      "RHINE_EU:INR": 0,
+      "MERIDIAN_SG:USD": 0,
+      "MERIDIAN_SG:EUR": 0,
+      "MERIDIAN_SG:SGD": 106669555,
+      "MERIDIAN_SG:INR": 0,
+      "BHARAT_IN:USD": 0,
+      "BHARAT_IN:EUR": 0,
+      "BHARAT_IN:SGD": 0,
+      "BHARAT_IN:INR": 0,
+      "OPENING:USD": -1200000000,
+      "OPENING:EUR": 0,
+      "OPENING:SGD": -1100000000,
+      "OPENING:INR": 0,
+      "OPERATOR:USD": 10000,
+      "OPERATOR:EUR": 0,
+      "OPERATOR:SGD": 0,
+      "OPERATOR:INR": 0
+    },
+    "observed_positions": [
+      {
+        "account_id": "ATLAS_US:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:USD",
+        "posted": 994975111,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:SGD",
+        "posted": 106669555,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:SGD",
+        "posted": -1100000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:USD",
+        "posted": -1200000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:USD",
+        "posted": 10000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:SGD",
+        "posted": 993330445,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:USD",
+        "posted": 205014889,
+        "reserved": 0,
+        "buffer": 0
+      }
+    ],
+    "exact_posting_lines_verified": 2500,
+    "independent": {
+      "run_id": "r7-cdfb23b76b234cb1b9a70382d42e45a0",
+      "pass": true,
+      "findings": [],
+      "accounts": 28,
+      "payments": 500,
+      "journal_groups": 1004,
+      "journal_lines": 2508,
+      "reservations": 1000,
+      "correspondent_obligations": 0,
+      "instant_messages": 0,
+      "events": 7034,
+      "event_hash": "28716b586bb4ae33550ee37d533d37cf0ad52a5fc6115aeed22121049d1f4f09",
+      "financial_state_hash": "71823453b80c4728f07363883ac98a2f0b6fc303ad594b6b8f75227bcf7d3082"
+    },
+    "replay": {
+      "match": true,
+      "events": 7034,
+      "event_hash": "28716b586bb4ae33550ee37d533d37cf0ad52a5fc6115aeed22121049d1f4f09",
+      "replay_hash": "c1d2590dd2a3d99d708a73edd49a45f70abf107f3f38fcd4b37ea28fa304ef5c",
+      "state_hash": "c1d2590dd2a3d99d708a73edd49a45f70abf107f3f38fcd4b37ea28fa304ef5c",
+      "earliest_corrupt_event": null,
+      "projection_difference": null
+    },
+    "pass": true
+  },
+  {
+    "run_id": "r7-0e0c33569504439c99d29ee57c93a0ec",
+    "count": 500,
+    "implementation": "baseline",
+    "reference_principal_total": 5014889,
+    "reference_target_total": 6669555,
+    "reference_fees_usd": 10000,
+    "expected_posted": {
+      "ATLAS_US:USD": 994975111,
+      "ATLAS_US:EUR": 0,
+      "ATLAS_US:SGD": 0,
+      "ATLAS_US:INR": 0,
+      "STERLING_UK:USD": 205014889,
+      "STERLING_UK:EUR": 0,
+      "STERLING_UK:SGD": 993330445,
+      "STERLING_UK:INR": 0,
+      "RHINE_EU:USD": 0,
+      "RHINE_EU:EUR": 0,
+      "RHINE_EU:SGD": 0,
+      "RHINE_EU:INR": 0,
+      "MERIDIAN_SG:USD": 0,
+      "MERIDIAN_SG:EUR": 0,
+      "MERIDIAN_SG:SGD": 106669555,
+      "MERIDIAN_SG:INR": 0,
+      "BHARAT_IN:USD": 0,
+      "BHARAT_IN:EUR": 0,
+      "BHARAT_IN:SGD": 0,
+      "BHARAT_IN:INR": 0,
+      "OPENING:USD": -1200000000,
+      "OPENING:EUR": 0,
+      "OPENING:SGD": -1100000000,
+      "OPENING:INR": 0,
+      "OPERATOR:USD": 10000,
+      "OPERATOR:EUR": 0,
+      "OPERATOR:SGD": 0,
+      "OPERATOR:INR": 0
+    },
+    "observed_positions": [
+      {
+        "account_id": "ATLAS_US:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:USD",
+        "posted": 994975111,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:SGD",
+        "posted": 106669555,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:SGD",
+        "posted": -1100000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:USD",
+        "posted": -1200000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:USD",
+        "posted": 10000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:SGD",
+        "posted": 993330445,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:USD",
+        "posted": 205014889,
+        "reserved": 0,
+        "buffer": 0
+      }
+    ],
+    "exact_posting_lines_verified": 2500,
+    "independent": {
+      "run_id": "r7-0e0c33569504439c99d29ee57c93a0ec",
+      "pass": true,
+      "findings": [],
+      "accounts": 28,
+      "payments": 500,
+      "journal_groups": 1004,
+      "journal_lines": 2508,
+      "reservations": 1000,
+      "correspondent_obligations": 0,
+      "instant_messages": 0,
+      "events": 7034,
+      "event_hash": "28716b586bb4ae33550ee37d533d37cf0ad52a5fc6115aeed22121049d1f4f09",
+      "financial_state_hash": "a9c3e302e07b34d0bff2c10648e97072a34625f2b74521c859d279cd60aeba89"
+    },
+    "replay": {
+      "match": true,
+      "events": 7034,
+      "event_hash": "28716b586bb4ae33550ee37d533d37cf0ad52a5fc6115aeed22121049d1f4f09",
+      "replay_hash": "c1d2590dd2a3d99d708a73edd49a45f70abf107f3f38fcd4b37ea28fa304ef5c",
+      "state_hash": "c1d2590dd2a3d99d708a73edd49a45f70abf107f3f38fcd4b37ea28fa304ef5c",
+      "earliest_corrupt_event": null,
+      "projection_difference": null
+    },
+    "pass": true
+  },
+  {
+    "run_id": "r7-b5d0a8496f624161b6c5183a934d2bde",
+    "count": 1000,
+    "implementation": "baseline",
+    "reference_principal_total": 10036265,
+    "reference_target_total": 13347732,
+    "reference_fees_usd": 20000,
+    "expected_posted": {
+      "ATLAS_US:USD": 989943735,
+      "ATLAS_US:EUR": 0,
+      "ATLAS_US:SGD": 0,
+      "ATLAS_US:INR": 0,
+      "STERLING_UK:USD": 210036265,
+      "STERLING_UK:EUR": 0,
+      "STERLING_UK:SGD": 986652268,
+      "STERLING_UK:INR": 0,
+      "RHINE_EU:USD": 0,
+      "RHINE_EU:EUR": 0,
+      "RHINE_EU:SGD": 0,
+      "RHINE_EU:INR": 0,
+      "MERIDIAN_SG:USD": 0,
+      "MERIDIAN_SG:EUR": 0,
+      "MERIDIAN_SG:SGD": 113347732,
+      "MERIDIAN_SG:INR": 0,
+      "BHARAT_IN:USD": 0,
+      "BHARAT_IN:EUR": 0,
+      "BHARAT_IN:SGD": 0,
+      "BHARAT_IN:INR": 0,
+      "OPENING:USD": -1200000000,
+      "OPENING:EUR": 0,
+      "OPENING:SGD": -1100000000,
+      "OPENING:INR": 0,
+      "OPERATOR:USD": 20000,
+      "OPERATOR:EUR": 0,
+      "OPERATOR:SGD": 0,
+      "OPERATOR:INR": 0
+    },
+    "observed_positions": [
+      {
+        "account_id": "ATLAS_US:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:USD",
+        "posted": 989943735,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:SGD",
+        "posted": 113347732,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:SGD",
+        "posted": -1100000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:USD",
+        "posted": -1200000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:USD",
+        "posted": 20000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:SGD",
+        "posted": 986652268,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:USD",
+        "posted": 210036265,
+        "reserved": 0,
+        "buffer": 0
+      }
+    ],
+    "exact_posting_lines_verified": 5000,
+    "independent": {
+      "run_id": "r7-b5d0a8496f624161b6c5183a934d2bde",
+      "pass": true,
+      "findings": [],
+      "accounts": 28,
+      "payments": 1000,
+      "journal_groups": 2004,
+      "journal_lines": 5008,
+      "reservations": 2000,
+      "correspondent_obligations": 0,
+      "instant_messages": 0,
+      "events": 14034,
+      "event_hash": "4cdd6faee5600f92b801f640ba2be0629f6197f3ae0894d2a33588f7301b92e4",
+      "financial_state_hash": "517c21d258bc93d80dbbf6b2369fdd4a735f4c33b558077f4581e7cc7086e7ed"
+    },
+    "replay": {
+      "match": true,
+      "events": 14034,
+      "event_hash": "4cdd6faee5600f92b801f640ba2be0629f6197f3ae0894d2a33588f7301b92e4",
+      "replay_hash": "c186c1d98ffafb33ca46505b9548305faf93886a06f1392054264b0ebc61f019",
+      "state_hash": "c186c1d98ffafb33ca46505b9548305faf93886a06f1392054264b0ebc61f019",
+      "earliest_corrupt_event": null,
+      "projection_difference": null
+    },
+    "pass": true
+  },
+  {
+    "run_id": "r7-722e17e0b48343f29fa588bd4d5e8f14",
+    "count": 1000,
+    "implementation": "modified",
+    "reference_principal_total": 10036265,
+    "reference_target_total": 13347732,
+    "reference_fees_usd": 20000,
+    "expected_posted": {
+      "ATLAS_US:USD": 989943735,
+      "ATLAS_US:EUR": 0,
+      "ATLAS_US:SGD": 0,
+      "ATLAS_US:INR": 0,
+      "STERLING_UK:USD": 210036265,
+      "STERLING_UK:EUR": 0,
+      "STERLING_UK:SGD": 986652268,
+      "STERLING_UK:INR": 0,
+      "RHINE_EU:USD": 0,
+      "RHINE_EU:EUR": 0,
+      "RHINE_EU:SGD": 0,
+      "RHINE_EU:INR": 0,
+      "MERIDIAN_SG:USD": 0,
+      "MERIDIAN_SG:EUR": 0,
+      "MERIDIAN_SG:SGD": 113347732,
+      "MERIDIAN_SG:INR": 0,
+      "BHARAT_IN:USD": 0,
+      "BHARAT_IN:EUR": 0,
+      "BHARAT_IN:SGD": 0,
+      "BHARAT_IN:INR": 0,
+      "OPENING:USD": -1200000000,
+      "OPENING:EUR": 0,
+      "OPENING:SGD": -1100000000,
+      "OPENING:INR": 0,
+      "OPERATOR:USD": 20000,
+      "OPERATOR:EUR": 0,
+      "OPERATOR:SGD": 0,
+      "OPERATOR:INR": 0
+    },
+    "observed_positions": [
+      {
+        "account_id": "ATLAS_US:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:USD",
+        "posted": 989943735,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:SGD",
+        "posted": 113347732,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:SGD",
+        "posted": -1100000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:USD",
+        "posted": -1200000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:USD",
+        "posted": 20000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:SGD",
+        "posted": 986652268,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:USD",
+        "posted": 210036265,
+        "reserved": 0,
+        "buffer": 0
+      }
+    ],
+    "exact_posting_lines_verified": 5000,
+    "independent": {
+      "run_id": "r7-722e17e0b48343f29fa588bd4d5e8f14",
+      "pass": true,
+      "findings": [],
+      "accounts": 28,
+      "payments": 1000,
+      "journal_groups": 2004,
+      "journal_lines": 5008,
+      "reservations": 2000,
+      "correspondent_obligations": 0,
+      "instant_messages": 0,
+      "events": 14034,
+      "event_hash": "4cdd6faee5600f92b801f640ba2be0629f6197f3ae0894d2a33588f7301b92e4",
+      "financial_state_hash": "6aed2bab6df7022c896a7c580d5d9165f8c75b70be599150e9a8ed481349aa3b"
+    },
+    "replay": {
+      "match": true,
+      "events": 14034,
+      "event_hash": "4cdd6faee5600f92b801f640ba2be0629f6197f3ae0894d2a33588f7301b92e4",
+      "replay_hash": "c186c1d98ffafb33ca46505b9548305faf93886a06f1392054264b0ebc61f019",
+      "state_hash": "c186c1d98ffafb33ca46505b9548305faf93886a06f1392054264b0ebc61f019",
+      "earliest_corrupt_event": null,
+      "projection_difference": null
+    },
+    "pass": true
+  },
+  {
+    "run_id": "r7-1f1f84bb70ff4458819495d0fa17346a",
+    "count": 1000,
+    "implementation": "modified",
+    "reference_principal_total": 10036265,
+    "reference_target_total": 13347732,
+    "reference_fees_usd": 20000,
+    "expected_posted": {
+      "ATLAS_US:USD": 989943735,
+      "ATLAS_US:EUR": 0,
+      "ATLAS_US:SGD": 0,
+      "ATLAS_US:INR": 0,
+      "STERLING_UK:USD": 210036265,
+      "STERLING_UK:EUR": 0,
+      "STERLING_UK:SGD": 986652268,
+      "STERLING_UK:INR": 0,
+      "RHINE_EU:USD": 0,
+      "RHINE_EU:EUR": 0,
+      "RHINE_EU:SGD": 0,
+      "RHINE_EU:INR": 0,
+      "MERIDIAN_SG:USD": 0,
+      "MERIDIAN_SG:EUR": 0,
+      "MERIDIAN_SG:SGD": 113347732,
+      "MERIDIAN_SG:INR": 0,
+      "BHARAT_IN:USD": 0,
+      "BHARAT_IN:EUR": 0,
+      "BHARAT_IN:SGD": 0,
+      "BHARAT_IN:INR": 0,
+      "OPENING:USD": -1200000000,
+      "OPENING:EUR": 0,
+      "OPENING:SGD": -1100000000,
+      "OPENING:INR": 0,
+      "OPERATOR:USD": 20000,
+      "OPERATOR:EUR": 0,
+      "OPERATOR:SGD": 0,
+      "OPERATOR:INR": 0
+    },
+    "observed_positions": [
+      {
+        "account_id": "ATLAS_US:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:USD",
+        "posted": 989943735,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:SGD",
+        "posted": 113347732,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:SGD",
+        "posted": -1100000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:USD",
+        "posted": -1200000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:USD",
+        "posted": 20000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:SGD",
+        "posted": 986652268,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:USD",
+        "posted": 210036265,
+        "reserved": 0,
+        "buffer": 0
+      }
+    ],
+    "exact_posting_lines_verified": 5000,
+    "independent": {
+      "run_id": "r7-1f1f84bb70ff4458819495d0fa17346a",
+      "pass": true,
+      "findings": [],
+      "accounts": 28,
+      "payments": 1000,
+      "journal_groups": 2004,
+      "journal_lines": 5008,
+      "reservations": 2000,
+      "correspondent_obligations": 0,
+      "instant_messages": 0,
+      "events": 14034,
+      "event_hash": "4cdd6faee5600f92b801f640ba2be0629f6197f3ae0894d2a33588f7301b92e4",
+      "financial_state_hash": "ecc471abfbcbfbeb003904fc15e3f44cf4062204e301f8335d64c2bd996db97b"
+    },
+    "replay": {
+      "match": true,
+      "events": 14034,
+      "event_hash": "4cdd6faee5600f92b801f640ba2be0629f6197f3ae0894d2a33588f7301b92e4",
+      "replay_hash": "c186c1d98ffafb33ca46505b9548305faf93886a06f1392054264b0ebc61f019",
+      "state_hash": "c186c1d98ffafb33ca46505b9548305faf93886a06f1392054264b0ebc61f019",
+      "earliest_corrupt_event": null,
+      "projection_difference": null
+    },
+    "pass": true
+  },
+  {
+    "run_id": "r7-ef1288c2e9304493a2a5e7425e62dca3",
+    "count": 1000,
+    "implementation": "baseline",
+    "reference_principal_total": 10036265,
+    "reference_target_total": 13347732,
+    "reference_fees_usd": 20000,
+    "expected_posted": {
+      "ATLAS_US:USD": 989943735,
+      "ATLAS_US:EUR": 0,
+      "ATLAS_US:SGD": 0,
+      "ATLAS_US:INR": 0,
+      "STERLING_UK:USD": 210036265,
+      "STERLING_UK:EUR": 0,
+      "STERLING_UK:SGD": 986652268,
+      "STERLING_UK:INR": 0,
+      "RHINE_EU:USD": 0,
+      "RHINE_EU:EUR": 0,
+      "RHINE_EU:SGD": 0,
+      "RHINE_EU:INR": 0,
+      "MERIDIAN_SG:USD": 0,
+      "MERIDIAN_SG:EUR": 0,
+      "MERIDIAN_SG:SGD": 113347732,
+      "MERIDIAN_SG:INR": 0,
+      "BHARAT_IN:USD": 0,
+      "BHARAT_IN:EUR": 0,
+      "BHARAT_IN:SGD": 0,
+      "BHARAT_IN:INR": 0,
+      "OPENING:USD": -1200000000,
+      "OPENING:EUR": 0,
+      "OPENING:SGD": -1100000000,
+      "OPENING:INR": 0,
+      "OPERATOR:USD": 20000,
+      "OPERATOR:EUR": 0,
+      "OPERATOR:SGD": 0,
+      "OPERATOR:INR": 0
+    },
+    "observed_positions": [
+      {
+        "account_id": "ATLAS_US:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "ATLAS_US:USD",
+        "posted": 989943735,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "BHARAT_IN:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:SGD",
+        "posted": 113347732,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "MERIDIAN_SG:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:SGD",
+        "posted": -1100000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPENING:USD",
+        "posted": -1200000000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "OPERATOR:USD",
+        "posted": 20000,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:SGD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "RHINE_EU:USD",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:EUR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:INR",
+        "posted": 0,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:SGD",
+        "posted": 986652268,
+        "reserved": 0,
+        "buffer": 0
+      },
+      {
+        "account_id": "STERLING_UK:USD",
+        "posted": 210036265,
+        "reserved": 0,
+        "buffer": 0
+      }
+    ],
+    "exact_posting_lines_verified": 5000,
+    "independent": {
+      "run_id": "r7-ef1288c2e9304493a2a5e7425e62dca3",
+      "pass": true,
+      "findings": [],
+      "accounts": 28,
+      "payments": 1000,
+      "journal_groups": 2004,
+      "journal_lines": 5008,
+      "reservations": 2000,
+      "correspondent_obligations": 0,
+      "instant_messages": 0,
+      "events": 14034,
+      "event_hash": "4cdd6faee5600f92b801f640ba2be0629f6197f3ae0894d2a33588f7301b92e4",
+      "financial_state_hash": "6aed2bab6df7022c896a7c580d5d9165f8c75b70be599150e9a8ed481349aa3b"
+    },
+    "replay": {
+      "match": true,
+      "events": 14034,
+      "event_hash": "4cdd6faee5600f92b801f640ba2be0629f6197f3ae0894d2a33588f7301b92e4",
+      "replay_hash": "c186c1d98ffafb33ca46505b9548305faf93886a06f1392054264b0ebc61f019",
+      "state_hash": "c186c1d98ffafb33ca46505b9548305faf93886a06f1392054264b0ebc61f019",
+      "earliest_corrupt_event": null,
+      "projection_difference": null
+    },
+    "pass": true
+  }
+]

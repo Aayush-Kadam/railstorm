@@ -1,0 +1,118 @@
+name: Research preview acceptance
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:18.6
+        env:
+          POSTGRES_USER: railstorm
+          POSTGRES_DB: railstorm
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U railstorm -d railstorm"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      RAILSTORM_DATABASE_URL: postgresql+psycopg://railstorm@127.0.0.1:5432/railstorm
+      PYTHONPATH: .
+      RAILSTORM_URL: http://127.0.0.1:8840
+      RAILSTORM_PORT: "8858"
+      COMPOSE_PROJECT_NAME: railstorm-release
+      COMPOSE_PARALLEL_LIMIT: "1"
+      CI: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.12.5'
+          python-version: '3.12'
+      - name: Clean locked Python installation
+        run: uv sync --frozen
+      - name: Dependency consistency
+        run: uv pip check
+      - name: Maintained lint, formatting and types
+        run: uv run --frozen python scripts/check_quality.py
+      - name: Disclosed historical type inventory
+        run: |
+          mkdir -p release-evidence
+          uv run --frozen mypy --explicit-package-bases railstorm tests experiments scripts > release-evidence/legacy-types.txt || test "$?" -eq 1
+          grep -q 'Found 41 errors in 10 files' release-evidence/legacy-types.txt
+      - name: Fresh database migrations
+        run: uv run --frozen alembic upgrade head
+      - name: Full real-PostgreSQL regression and recovery tests
+        run: uv run --frozen pytest -q --junitxml=release-evidence/pytest.xml
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Locked frontend install, TypeScript and production build
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.25.0 --activate
+          pnpm --dir frontend install --frozen-lockfile
+          pnpm --dir frontend run build
+      - name: Native API startup and scenario loading
+        run: |
+          uv run --frozen python scripts/load_scenarios.py
+          uv run --frozen uvicorn railstorm.api:factory --factory --host 127.0.0.1 --port 8840 > release-evidence/api.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:8840/api/v1/health > release-evidence/native-health.json; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Browser installation
+        working-directory: frontend
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Native all-rail financial smoke
+        run: uv run --frozen python -m experiments.r5_smoke initial --checkpoint release-evidence/native-smoke.json
+      - name: Browser workflows and fresh application screenshots
+        working-directory: frontend
+        run: |
+          mkdir -p ../docs/screenshots
+          for suite in e2e correspondent instant finality-instant routing correspondent-routing optimizer optimizer-v2 p2a r3; do
+            node "$suite.e2e.mjs"
+          done
+      - name: Clean R7 container image build
+        run: docker compose --progress plain build
+      - name: Container startup and database health
+        run: docker compose up -d --no-build --wait --wait-timeout 120
+      - name: Container all-rail financial smoke
+        run: docker compose exec -T command-center python -m experiments.r5_smoke initial --checkpoint /app/docs/container-smoke.json
+      - name: Recreate application and database containers, retaining durable volumes
+        run: |
+          docker compose down
+          docker compose up -d --no-build --wait --wait-timeout 120
+      - name: Container restart, pending obligation, exactly-once recovery and replay
+        run: |
+          docker compose exec -T command-center python -m experiments.r5_smoke restart --restart-scope stack --checkpoint /app/docs/container-smoke.json
+          docker compose cp command-center:/app/docs/container-smoke.json release-evidence/container-smoke.json
+          docker compose images --format json > release-evidence/container-images.json
+      - name: Browser crisis lab on the actual container image
+        working-directory: frontend
+        env:
+          RAILSTORM_URL: http://127.0.0.1:8858
+        run: node r3.e2e.mjs
+      - name: Source and environment manifest
+        if: always()
+        run: |
+          mkdir -p release-evidence
+          git rev-parse HEAD > release-evidence/commit.txt
+          git ls-files -z | xargs -0 sha256sum > release-evidence/source-sha256.txt
+          uv pip freeze > release-evidence/python-environment.txt
+          docker compose logs --no-color > release-evidence/container.log 2>&1 || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: release-acceptance-${{ github.sha }}
+          path: |
+            release-evidence/
+            docs/screenshots/
+            docs/r3_evidence/
+          retention-days: 14
+      - name: Stop isolated CI stack
+        if: always()
+        run: docker compose down

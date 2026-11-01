@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "source_files_scanned": 234,
+  "secret_pattern_findings": [],
+  "license_unchanged": true,
+  "runtime_matches_R7": true,
+  "history": "new sanitized root history only; original source had no Git repository",
+  "exclusions": [
+    "local logs",
+    "databases",
+    "historical ZIPs",
+    "caches",
+    "installed dependencies",
+    "build outputs"
+  ],
+  "review_notes": [
+    "scanner literals containing old private hostname generalized in publication copy",
+    "synthetic local trust URLs contain no passwords",
+    "no third-party visual assets added; screenshots are executed application states",
+    "pinned dependencies are installed from package registries, not vendored into the source snapshot",
+    "no new license granted"
+  ]
+}

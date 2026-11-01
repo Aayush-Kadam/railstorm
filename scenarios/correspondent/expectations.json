@@ -1,0 +1,197 @@
+{
+  "CB-01": {
+    "economic_status": "SETTLED",
+    "open_exposure_minor": {},
+    "beneficiary_minor": 9825,
+    "fees_minor": {
+      "USD": 175
+    },
+    "posted_stages": 3,
+    "financial_errors": 0,
+    "replay_match": true,
+    "route": [
+      "ATLAS_US",
+      "STERLING_UK",
+      "RHINE_EU",
+      "MERIDIAN_SG"
+    ],
+    "initial_state": "Relationship funding and fee/window configuration in scenario JSON; bank GL mirrors funded settlement cash.",
+    "postings": "Two balanced bank-domain journals per posted stage; each HOP debits receiving vostro, credits fees and payable/beneficiary, and mirrors the sending nostro. FX uses separate source/target currency journals."
+  },
+  "CB-02": {
+    "economic_status": "QUEUED",
+    "open_exposure_minor": {},
+    "beneficiary_minor": 0,
+    "fees_minor": {},
+    "posted_stages": 0,
+    "financial_errors": 0,
+    "replay_match": true,
+    "route": [
+      "ATLAS_US",
+      "STERLING_UK",
+      "RHINE_EU",
+      "MERIDIAN_SG"
+    ],
+    "initial_state": "Relationship funding and fee/window configuration in scenario JSON; bank GL mirrors funded settlement cash.",
+    "postings": "Two balanced bank-domain journals per posted stage; each HOP debits receiving vostro, credits fees and payable/beneficiary, and mirrors the sending nostro. FX uses separate source/target currency journals."
+  },
+  "CB-03": {
+    "economic_status": "PENDING_EXPOSURE",
+    "open_exposure_minor": {
+      "USD": 9900
+    },
+    "beneficiary_minor": 0,
+    "fees_minor": {
+      "USD": 100
+    },
+    "posted_stages": 1,
+    "financial_errors": 0,
+    "replay_match": true,
+    "route": [
+      "ATLAS_US",
+      "STERLING_UK",
+      "RHINE_EU",
+      "MERIDIAN_SG"
+    ],
+    "initial_state": "Relationship funding and fee/window configuration in scenario JSON; bank GL mirrors funded settlement cash.",
+    "postings": "Two balanced bank-domain journals per posted stage; each HOP debits receiving vostro, credits fees and payable/beneficiary, and mirrors the sending nostro. FX uses separate source/target currency journals."
+  },
+  "CB-04": {
+    "economic_status": "PENDING_EXPOSURE",
+    "open_exposure_minor": {
+      "USD": 9900
+    },
+    "beneficiary_minor": 0,
+    "fees_minor": {
+      "USD": 100
+    },
+    "posted_stages": 1,
+    "financial_errors": 0,
+    "replay_match": true,
+    "route": [
+      "ATLAS_US",
+      "STERLING_UK",
+      "RHINE_EU",
+      "MERIDIAN_SG"
+    ],
+    "initial_state": "Relationship funding and fee/window configuration in scenario JSON; bank GL mirrors funded settlement cash.",
+    "postings": "Two balanced bank-domain journals per posted stage; each HOP debits receiving vostro, credits fees and payable/beneficiary, and mirrors the sending nostro. FX uses separate source/target currency journals."
+  },
+  "CB-05": {
+    "economic_status": "SETTLED",
+    "open_exposure_minor": {},
+    "beneficiary_minor": 9825,
+    "fees_minor": {
+      "USD": 175
+    },
+    "posted_stages": 3,
+    "financial_errors": 0,
+    "replay_match": true,
+    "route": [
+      "ATLAS_US",
+      "STERLING_UK",
+      "RHINE_EU",
+      "MERIDIAN_SG"
+    ],
+    "initial_state": "Relationship funding and fee/window configuration in scenario JSON; bank GL mirrors funded settlement cash.",
+    "postings": "Two balanced bank-domain journals per posted stage; each HOP debits receiving vostro, credits fees and payable/beneficiary, and mirrors the sending nostro. FX uses separate source/target currency journals."
+  },
+  "CB-06": {
+    "economic_status": "PENDING_EXPOSURE",
+    "open_exposure_minor": {
+      "USD": 9900
+    },
+    "beneficiary_minor": 0,
+    "fees_minor": {
+      "USD": 100
+    },
+    "posted_stages": 1,
+    "financial_errors": 0,
+    "replay_match": true,
+    "route": [
+      "ATLAS_US",
+      "STERLING_UK",
+      "RHINE_EU",
+      "MERIDIAN_SG"
+    ],
+    "initial_state": "Relationship funding and fee/window configuration in scenario JSON; bank GL mirrors funded settlement cash.",
+    "postings": "Two balanced bank-domain journals per posted stage; each HOP debits receiving vostro, credits fees and payable/beneficiary, and mirrors the sending nostro. FX uses separate source/target currency journals."
+  },
+  "CB-07": {
+    "economic_status": "EXPIRED",
+    "open_exposure_minor": {},
+    "beneficiary_minor": 0,
+    "fees_minor": {},
+    "posted_stages": 0,
+    "financial_errors": 0,
+    "replay_match": true,
+    "route": [
+      "ATLAS_US",
+      "STERLING_UK",
+      "RHINE_EU",
+      "MERIDIAN_SG"
+    ],
+    "initial_state": "Relationship funding and fee/window configuration in scenario JSON; bank GL mirrors funded settlement cash.",
+    "postings": "Two balanced bank-domain journals per posted stage; each HOP debits receiving vostro, credits fees and payable/beneficiary, and mirrors the sending nostro. FX uses separate source/target currency journals."
+  },
+  "CB-08": {
+    "economic_status": "SETTLED",
+    "open_exposure_minor": {},
+    "beneficiary_minor": 9797,
+    "fees_minor": {
+      "USD": 203
+    },
+    "posted_stages": 3,
+    "financial_errors": 0,
+    "replay_match": true,
+    "route": [
+      "ATLAS_US",
+      "STERLING_UK",
+      "RHINE_EU",
+      "MERIDIAN_SG"
+    ],
+    "initial_state": "Relationship funding and fee/window configuration in scenario JSON; bank GL mirrors funded settlement cash.",
+    "postings": "Two balanced bank-domain journals per posted stage; each HOP debits receiving vostro, credits fees and payable/beneficiary, and mirrors the sending nostro. FX uses separate source/target currency journals."
+  },
+  "CB-09": {
+    "economic_status": "PENDING_EXPOSURE",
+    "open_exposure_minor": {
+      "SGD": 13117
+    },
+    "beneficiary_minor": 0,
+    "fees_minor": {
+      "USD": 100,
+      "SGD": 50
+    },
+    "posted_stages": 3,
+    "financial_errors": 0,
+    "replay_match": true,
+    "route": [
+      "ATLAS_US",
+      "STERLING_UK",
+      "RHINE_EU",
+      "MERIDIAN_SG"
+    ],
+    "initial_state": "Relationship funding and fee/window configuration in scenario JSON; bank GL mirrors funded settlement cash.",
+    "postings": "Two balanced bank-domain journals per posted stage; each HOP debits receiving vostro, credits fees and payable/beneficiary, and mirrors the sending nostro. FX uses separate source/target currency journals."
+  },
+  "CB-10": {
+    "economic_status": "SETTLED",
+    "open_exposure_minor": {},
+    "beneficiary_minor": 9825,
+    "fees_minor": {
+      "USD": 175
+    },
+    "posted_stages": 3,
+    "financial_errors": 0,
+    "replay_match": true,
+    "route": [
+      "ATLAS_US",
+      "STERLING_UK",
+      "RHINE_EU",
+      "MERIDIAN_SG"
+    ],
+    "initial_state": "Relationship funding and fee/window configuration in scenario JSON; bank GL mirrors funded settlement cash.",
+    "postings": "Two balanced bank-domain journals per posted stage; each HOP debits receiving vostro, credits fees and payable/beneficiary, and mirrors the sending nostro. FX uses separate source/target currency journals."
+  }
+}

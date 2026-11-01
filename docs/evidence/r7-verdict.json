@@ -1,0 +1,12 @@
+{
+  "architecture": "VERIFIED IMPROVEMENT",
+  "financial": "PASS",
+  "concurrency": "PASS",
+  "target10000": "UNVERIFIED",
+  "preview": "PRESERVED",
+  "expanded_vision": "PARTIAL",
+  "largest_elapsed_reduction_percent": 39.60977789903918,
+  "largest_speed_factor": 1.6558972052266883,
+  "best_native1000_per_second": 60.32477386320456,
+  "regression_tests": 268
+}

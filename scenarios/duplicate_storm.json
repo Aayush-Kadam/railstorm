@@ -1,0 +1,1 @@
+{"scenario_id":"duplicate_storm","seed":20261029,"payment_count":100,"principal_minor":10000,"fee_minor":20,"faults":[{"id":"duplicates","type":"DUPLICATE_DELIVERY","at_ms":0,"duration_ms":1000,"count":5}]}

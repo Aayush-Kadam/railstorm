@@ -1,0 +1,1 @@
+{"scenario_id":"fx_shock","seed":20261029,"payment_count":100,"principal_minor":10000,"fee_minor":20,"faults":[{"id":"reprice","type":"FX_RATE_SHOCK","at_ms":100,"duration_ms":500,"numerator":120,"denominator":100}]}
