@@ -11,10 +11,9 @@
 - Full expanded flagship vision remains PARTIAL. No new optimization campaign is included.
 - Historical R5 Docker/browser results and R7 native results are distinct from fresh release checks.
 - The historical generator inventory has41 mypy errors in10 scripts. Reproduced during R8 review:
-  p01_forensics (13), p1b_c2_evidence (8), p1c_d1_evidence (9), p1c_o0_campaign (1),
-  p1c_o0_summarize (2), p1c_o1_attribution (2), p1c_o1_campaign (1),
-  p1c_o1_diagnose (2), p1c_o1_final_audit (2), p1c_o1_summarize (4).
-  The per-file counts above are to be checked against the retained type inventory before release.
+  See [the exact Windows inventory](evidence/legacy-type-inventory-windows.json). The fresh Linux
+  inventory has52 errors in12 historical scripts, including unguarded Windows profiling APIs;
+  see [the complete Linux diagnostics](evidence/legacy-type-inventory-linux.txt).
   These involve heterogeneous report dictionaries, dynamically imported test modules, and optional
   platform profiling attributes. They are outside the maintained gate; no blanket ignores were
   introduced. Frozen references are retained unchanged. Runtime refactoring to repair old report

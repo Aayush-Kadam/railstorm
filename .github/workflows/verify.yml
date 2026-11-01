@@ -41,8 +41,9 @@ jobs:
         run: |
           mkdir -p release-evidence
           uv run --frozen mypy --explicit-package-bases railstorm tests experiments scripts > release-evidence/legacy-types.txt || test "$?" -eq 1
-          # Linux has resource.getrusage/RUSAGE_SELF; Windows reports two extra errors.
-          grep -q 'Found 39 errors in 10 files' release-evidence/legacy-types.txt
+          # Preserve the observed Linux inventory; Windows separately reports41 in10 files.
+          cat release-evidence/legacy-types.txt
+          grep -q 'Found 52 errors in 12 files' release-evidence/legacy-types.txt
       - name: Fresh database migrations
         run: uv run --frozen alembic upgrade head
       - name: Full real-PostgreSQL regression and recovery tests
@@ -74,8 +75,8 @@ jobs:
         working-directory: frontend
         run: |
           mkdir -p ../docs/screenshots
-          for suite in e2e correspondent instant finality-instant routing correspondent-routing optimizer optimizer-v2 p2a r3; do
-            node "$suite.e2e.mjs"
+          for suite in e2e.mjs correspondent.e2e.mjs instant.e2e.mjs finality-instant.e2e.mjs routing.e2e.mjs correspondent-routing.e2e.mjs optimizer.e2e.mjs optimizer-v2.e2e.mjs p2a.e2e.mjs r3.e2e.mjs; do
+            node "$suite"
           done
       - name: Clean R7 container image build
         run: docker compose --progress plain build

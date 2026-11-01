@@ -1,0 +1,182 @@
+{
+  "platform": "Windows",
+  "error_count": 41,
+  "files": {
+    "experiments/p1c_o1_summarize.py": 4,
+    "experiments/p1c_o1_attribution.py": 2,
+    "experiments/p1c_o0_summarize.py": 2,
+    "experiments/p1c_o1_final_audit.py": 2,
+    "experiments/p01_forensics.py": 11,
+    "experiments/p1b_c2_evidence.py": 7,
+    "experiments/p1c_d1_evidence.py": 9,
+    "experiments/p1c_o1_diagnose.py": 2,
+    "experiments/p1c_o0_campaign.py": 1,
+    "experiments/p1c_o1_campaign.py": 1
+  },
+  "diagnostics": [
+    {
+      "file": "experiments/p1c_o1_summarize.py",
+      "message": "Need type annotation for \"fees_completed\"  [var-annotated]"
+    },
+    {
+      "file": "experiments/p1c_o1_summarize.py",
+      "message": "Incompatible types in assignment (expression has type \"list[dict[str, Any]]\", target has type \"dict[str, Any]\")  [assignment]"
+    },
+    {
+      "file": "experiments/p1c_o1_summarize.py",
+      "message": "Incompatible types in assignment (expression has type \"bool\", target has type \"dict[str, Any]\")  [assignment]"
+    },
+    {
+      "file": "experiments/p1c_o1_summarize.py",
+      "message": "Need type annotation for \"accounts\" (hint: \"accounts: dict[<type>, <type>] = ...\")  [var-annotated]"
+    },
+    {
+      "file": "experiments/p1c_o1_attribution.py",
+      "message": "Need type annotation for \"checks\"  [var-annotated]"
+    },
+    {
+      "file": "experiments/p1c_o1_attribution.py",
+      "message": "Need type annotation for \"opportunities\"  [var-annotated]"
+    },
+    {
+      "file": "experiments/p1c_o0_summarize.py",
+      "message": "Incompatible types in assignment (expression has type \"str\", target has type \"dict[str, dict[str, Any]]\")  [assignment]"
+    },
+    {
+      "file": "experiments/p1c_o0_summarize.py",
+      "message": "Incompatible types in assignment (expression has type \"str\", target has type \"dict[str, dict[str, Any]]\")  [assignment]"
+    },
+    {
+      "file": "experiments/p1c_o1_final_audit.py",
+      "message": "Need type annotation for \"booked_fees\"  [var-annotated]"
+    },
+    {
+      "file": "experiments/p1c_o1_final_audit.py",
+      "message": "Need type annotation for \"beneficiary_proceeds\"  [var-annotated]"
+    },
+    {
+      "file": "experiments/p01_forensics.py",
+      "message": "Module has no attribute \"getrusage\"  [attr-defined]"
+    },
+    {
+      "file": "experiments/p01_forensics.py",
+      "message": "Module has no attribute \"RUSAGE_SELF\"  [attr-defined]"
+    },
+    {
+      "file": "experiments/p01_forensics.py",
+      "message": "Need type annotation for \"data\"  [var-annotated]"
+    },
+    {
+      "file": "experiments/p01_forensics.py",
+      "message": "Need type annotation for \"starts\" (hint: \"starts: dict[<type>, <type>] = ...\")  [var-annotated]"
+    },
+    {
+      "file": "experiments/p01_forensics.py",
+      "message": "Need type annotation for \"errors\"  [var-annotated]"
+    },
+    {
+      "file": "experiments/p01_forensics.py",
+      "message": "Unsupported operand types for + (\"object\" and \"int\")  [operator]"
+    },
+    {
+      "file": "experiments/p01_forensics.py",
+      "message": "Unsupported operand types for + (\"object\" and \"int\")  [operator]"
+    },
+    {
+      "file": "experiments/p01_forensics.py",
+      "message": "\"object\" has no attribute \"setdefault\"  [attr-defined]"
+    },
+    {
+      "file": "experiments/p01_forensics.py",
+      "message": "Unsupported operand types for + (\"object\" and \"int\")  [operator]"
+    },
+    {
+      "file": "experiments/p01_forensics.py",
+      "message": "Argument 1 to \"Path\" has incompatible type \"str | None\"; expected \"str | PathLike[str]\"  [arg-type]"
+    },
+    {
+      "file": "experiments/p01_forensics.py",
+      "message": "\"Stats\" has no attribute \"stats\"  [attr-defined]"
+    },
+    {
+      "file": "experiments/p1b_c2_evidence.py",
+      "message": "Argument 1 to \"module_from_spec\" has incompatible type \"ModuleSpec | None\"; expected \"ModuleSpec\"  [arg-type]"
+    },
+    {
+      "file": "experiments/p1b_c2_evidence.py",
+      "message": "Item \"None\" of \"ModuleSpec | None\" has no attribute \"loader\"  [union-attr]"
+    },
+    {
+      "file": "experiments/p1b_c2_evidence.py",
+      "message": "Item \"None\" of \"Loader | Any | None\" has no attribute \"exec_module\"  [union-attr]"
+    },
+    {
+      "file": "experiments/p1b_c2_evidence.py",
+      "message": "Need type annotation for \"reports\" (hint: \"reports: dict[<type>, <type>] = ...\")  [var-annotated]"
+    },
+    {
+      "file": "experiments/p1b_c2_evidence.py",
+      "message": "Need type annotation for \"samples\" (hint: \"samples: list[<type>] = ...\")  [var-annotated]"
+    },
+    {
+      "file": "experiments/p1b_c2_evidence.py",
+      "message": "Module has no attribute \"world\"  [attr-defined]"
+    },
+    {
+      "file": "experiments/p1b_c2_evidence.py",
+      "message": "Module has no attribute \"oracle\"  [attr-defined]"
+    },
+    {
+      "file": "experiments/p1c_d1_evidence.py",
+      "message": "Argument 1 to \"module_from_spec\" has incompatible type \"ModuleSpec | None\"; expected \"ModuleSpec\"  [arg-type]"
+    },
+    {
+      "file": "experiments/p1c_d1_evidence.py",
+      "message": "Item \"None\" of \"ModuleSpec | None\" has no attribute \"loader\"  [union-attr]"
+    },
+    {
+      "file": "experiments/p1c_d1_evidence.py",
+      "message": "Item \"None\" of \"Loader | Any | None\" has no attribute \"exec_module\"  [union-attr]"
+    },
+    {
+      "file": "experiments/p1c_d1_evidence.py",
+      "message": "Need type annotation for \"report\"  [var-annotated]"
+    },
+    {
+      "file": "experiments/p1c_d1_evidence.py",
+      "message": "Incompatible types in assignment (expression has type \"dict[str, Any]\", target has type \"list[Any]\")  [assignment]"
+    },
+    {
+      "file": "experiments/p1c_d1_evidence.py",
+      "message": "Module has no attribute \"setup_case\"  [attr-defined]"
+    },
+    {
+      "file": "experiments/p1c_d1_evidence.py",
+      "message": "Module has no attribute \"checks\"  [attr-defined]"
+    },
+    {
+      "file": "experiments/p1c_d1_evidence.py",
+      "message": "Incompatible types in assignment (expression has type \"str\", target has type \"list[Any]\")  [assignment]"
+    },
+    {
+      "file": "experiments/p1c_d1_evidence.py",
+      "message": "Need type annotation for \"history\" (hint: \"history: list[<type>] = ...\")  [var-annotated]"
+    },
+    {
+      "file": "experiments/p1c_o1_diagnose.py",
+      "message": "Need type annotation for \"fees\"  [var-annotated]"
+    },
+    {
+      "file": "experiments/p1c_o1_diagnose.py",
+      "message": "Need type annotation for \"fees\"  [var-annotated]"
+    },
+    {
+      "file": "experiments/p1c_o0_campaign.py",
+      "message": "Item \"Sequence[str]\" of \"Any | Sequence[str]\" has no attribute \"append\"  [union-attr]"
+    },
+    {
+      "file": "experiments/p1c_o1_campaign.py",
+      "message": "Item \"Sequence[str]\" of \"Any | Sequence[str]\" has no attribute \"append\"  [union-attr]"
+    }
+  ]
+}
